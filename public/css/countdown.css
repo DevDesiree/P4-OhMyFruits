@@ -1,0 +1,29 @@
+body {
+    background-image: url(''); /*poner la imagen de fondo que no puedo*/
+    background-size: cover;
+    background-position: center;
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#countdown {
+    position: fixed;
+    top: 60px; 
+    right: 20px; 
+    background-color: #2c1c51ff;
+    border: 2px solid #77cc0aff;
+    color: #f3c89fff;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/* Estilos para los botones de dificultad */
+.difficultyButton {
+    background-color: #D83D3D;
+    color: #D9D9D9;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/countdown.css">
 </head>
 
 <body>
@@ -30,6 +31,13 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="countdownSection">
+            <div id="countdown"></div>
+            <button class="difficultyButton" onclick="changeDifficulty('easy')">Easy</button>
+            <button class="difficultyButton" onclick="changeDifficulty('normal')">Normal</button>
+            <button class="difficultyButton" onclick="changeDifficulty('hard')">Hard</button>
         </section>
     </main>
 
@@ -58,6 +66,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
+    <script src="./public/js/countdown.js"></script>
 </body>
 
 </html>
