@@ -20,7 +20,7 @@ body {
 }
 
 /* Estilos para los botones de dificultad */
-.difficultyButton {
+.difficulty-button {
     background-color: #D83D3D;
     color: #D9D9D9;
     padding: 10px 20px;
