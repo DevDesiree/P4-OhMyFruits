@@ -6,5 +6,7 @@
 --floral-white: #f9f7efff;
 --russian-violet: #2c1c51ff;
 */
+/*  */
 
 @import url(./playerName.css);
+@import url(./make_target.css)
