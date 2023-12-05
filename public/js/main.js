@@ -1,3 +1,11 @@
+// Funcion navbar Modularized
+import { toggleSound } from "./navbar.js";
+const sound = document.getElementById("iconSound")
+
+sound.addEventListener("click", ()=>{
+    toggleSound(sound)
+})
+
 //H
 import {  } from "./playerName.js";
 import {  } from "./startButton.js";
