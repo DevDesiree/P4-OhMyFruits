@@ -1,0 +1,109 @@
+/* 
+ CSS HEX 
+--yellow-green: #77cc0aff;
+--peach: #f3c89fff;
+--rose-red: #c20b50ff;
+--floral-white: #f9f7efff;
+--russian-violet: #2c1c51ff;
+*/
+
+
+
+#displayGame {
+    margin:0;
+    font-family:sans-serif;
+    min-height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    background-color: #f9f7efff;
+    user-select: none;
+}
+
+#stage-bkg-img{
+   width: 50%;
+   height: 50vh;
+   position:fixed;
+}
+
+
+.infinite-carousel {
+    margin: 2em 0;
+    /* max-width: 1000px; */
+    width: 90%;
+    overflow:hidden;
+    -webkit-mask:linear-gradient(
+        90deg,
+        transparent,
+        #fff 30%,
+        #fff 80%,
+        transparent
+    );
+    mask:linear-gradient(
+        90deg,
+        transparent,
+        #fff 30%,
+        #fff 80%,
+        transparent
+    );
+}
+ 
+.image-container {
+    width: max-content;
+    /* padding: 2px 0; */
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    gap: 5.5em;
+    list-style:none;
+    border: red solid 1px;
+}
+
+.infinite-carousel .image-fruit {
+    max-width: 20em;
+
+}
+
+ 
+ .image-fruit {
+    max-width: 3em;
+    padding-left: 2em;
+
+    /* animation: slideRightToLeft 30s linear infinite; Ajusta la duración de la animación */
+    /* margin: 0.2% 0.2%;   Ajusta el espacio entre las imágenes */
+}  
+
+
+ @keyframes move {
+    0% {
+        transform: translate(100%);
+    }
+   
+    100% {
+        transform: translate(-15000px);
+    }
+} 
+
+
+.image-plank  {
+    width: 100%;
+    height: 80px;
+    display:flex;
+    justify-content: center;
+}
+
+
+@keyframes starSlideUp {
+    0% {
+        opacity:80;
+        
+    10% {
+        opacity:100;
+    }
+    }
+    100% {
+        transform: translateY(-800%);
+        opacity:0,
+    }
+}

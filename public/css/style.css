@@ -6,6 +6,14 @@
 --floral-white: #f9f7efff;
 --russian-violet: #2c1c51ff;
 */
+/*  */
+
+
+/* Styles Navbar */
+@import url(./navbar.css);
 
 @import url(./playerName.css);
-@import url(./navbar.css);
+@import url(./startButton.css);
+@import url(./make_target.css)
+
+
