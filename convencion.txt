@@ -1,1 +1,13 @@
 Aqui podemos ir dejando nuestras ideas o forma de trabajar en el proyecto.
+
+- A la hora de escribir las clases, ID's en html: 
+Para las clases usaremos : clase-ejemplo  
+Para los IDs usaremos: idEjemplo
+A la hora de escribir las variables y funciones en JS:
+- Se utilizara Camel Case. Ej: 
+Para las variables: let soyVariable
+Para las funciones: function soyFuncion()
+
+- Para el tema de las fuentes
+ - Dentro del juego usaremos fuente VT233 
+   Fuera del juego (navbar, footer) usaremos otra fuente

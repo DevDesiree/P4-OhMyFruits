@@ -31,8 +31,9 @@
       </div>
       <div id="message"></div>
     </form>
-    <h2>Total Score</h2>
-    <div id="score"></div>
+    <div id="score">
+        <h2>Total Score</h2>
+    </div>
 </section>
         <section>
             <div id="contentGame">
@@ -40,9 +41,40 @@
                     <!-- Aqui irá el display del juego -->
                     <div id="modalInstructions">
                         <!-- Aqui irá el modal de las instrucciones que se mostrara al clicar en el boton How to Play -->
+                        <h2>HOW TO PLAY</h2>
+                        <p>
+                           <br> Help Casey Knock Down the Fruits 🍒🍊🍉
+                        <br><br>
+                          <strong>Game Objective.</strong>
+                        <br>
+                           Help Casey knock down as many fruits as you can in the allotted time. <br>
+                            <br><strong>Each fruit has a different point value:<br></strong>
+                            - **Cherries**: 5 points<br>
+                            - **Oranges**: 3 points<br>
+                            - **Watermelons**: 1 point<br>
+                        <br>
+                            <strong>Level Duration</strong>
+                        <br>
+                            The time allotted depends on the difficulty level you choose:
+                            <br>
+                            - Difficult**: 30 seconds<br>
+                            - Normal**: 1 minute<br>
+                            - Easy**: 2 minutes<br><br>
+                           <strong>How to Play:</strong><br>
+                            1. Choose your difficulty level.<br>
+                            2. Use the arrow keys to move Casey's bow sight.<br>
+                            3. Press the space key to shoot.<br>
+                            4. Try to get the highest score possible before the time runs out!<br><br>
+                            Good luck and have fun helping Casey knock down the fruits! 😊
+                        </p>
                     </div>
-                    <div class="buttonsGame">
+                    <div class="game-buttons">
                         <!-- Aqui irán los botones de Play y How to Play -->
+                        <audio id="startButtonSound" src="./public/sounds/startButtonSound.wav"></audio>
+                        <button type="button" id="startButton" class="start-button">START GAME</button>
+                    </div>
+                    <div class="quit-button">
+                        <button type="button" id="quitButton" class="quit-button">QUIT GAME</button>
                     </div>
                 </div>
             </div>
@@ -55,7 +87,7 @@
             <li><a href="#"></a>Cookies</li>
         </ul>
 
-        <button>Home</button>
+        <button>Home</button>                 
 
         <ul>
             <li>Message</li>
