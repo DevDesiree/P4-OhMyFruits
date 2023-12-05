@@ -1,0 +1,34 @@
+footer {
+    background-color: #6C53A4;
+    padding-bottom: 1rem;
+    padding: 1.2rem;
+}
+.contact-icons {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.copyright-container {
+    width: 25%;
+    height: 25px;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    background-color: #D9D9D9;
+    border: solid #D9D9D9;
+    text-align: center;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .contact-icons {
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    .copyright-container {
+       font-size: 10px;
+        width: auto;
+    }
+}
