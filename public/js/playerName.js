@@ -1,40 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const saveNameButton = document.getElementById('SaveName');
-    const messageDiv = document.getElementById('nameContainer'); 
-    const playerNameInput = document.getElementById('PlayerName');
-    const scoreDiv = document.getElementById('Score');
-  
-    saveNameButton.onclick = function() {
-      const playerName = playerNameInput.value.trim();
-      const message = validatePlayerName(playerName);
-      if (!message) {
-        if (localStorage.getItem(playerName)) {
-          messageDiv.textContent = 'User already exists. Choose a different name.';
-        } else {
-          localStorage.setItem(playerName, 0);
-          messageDiv.textContent = 'Name saved! You can play now.';
-        }
-      } else {
-        messageDiv.textContent = message;
-      }
-    };
-  
-    document.getElementById('PlayAnonymously').onclick = function() {
-      messageDiv.textContent = 'Playing anonymously. Scores will not be saved.';
-    };
-  
-    function validatePlayerName(name) {
-      if (name.length < 5 || name.length > 10) return 'Name must be 5-10 characters long.';
-      if (!/[A-Z]/.test(name)) return 'Name needs an uppercase letter.';
-      if (!/\d/.test(name)) return 'Name needs a number.';
-      return '';
+
+export function saveName(event) {
+  event.preventDefault()
+  const playerNameInput = document.getElementById('playerName');
+  const playerName = playerNameInput.value.trim();
+  const message = validatePlayerName(playerName);
+  if (message) {
+    if (localStorage.getItem("Username", playerName)) {
+      messageError('User already exists. Choose a different name.')
+    } else {
+      localStorage.setItem("Username", playerName);
+      messageAprobe("Name Saved!", "You can play now")
+      //Aqui faltaria la Logica para ocultar el form.
     }
+  }
+}
+
+function validatePlayerName(name) {
+
+  if (!name){
+    messageError('Empty name not valid')
+    return false
+
+  } else if (name) {
+    if (name.length < 5 || name.length > 10) {
+      messageError('Name must be 5-10 characters long.')
+      return false
+    }
+    if (!/[A-Z]/.test(name)) {
+      messageError('Name needs an uppercase letter.')
+      return false
+    }
+    if (!/\d/.test(name)) {
+      messageError('Name needs a number.')
+      return false
+    }
+    return true;
   
-    window.endGame = function(score) {
-      const playerName = playerNameInput.value.trim();
-      if (playerName && !validatePlayerName(playerName) && localStorage.getItem(playerName)) {
-        localStorage.setItem(playerName, score);
-        scoreDiv.textContent = 'Total Score: ' + score;
-      }
-    };
+  }
+ 
+}
+
+export function playAnonymously() {
+  messageAprobe("Playing anonymously", "Scores will not be saved.")
+  //Logica para ocultar el form o para evitar duplicidad de codigo, hacer una funcion para ocultarlo.
+}
+
+
+// Funciones para sweetAlert
+function messageAprobe(title, text) {
+  Swal.fire({
+    title: title,
+    text: text,
+    icon: "success"
   });
+}
+
+function messageError(error) {
+  Swal.fire({
+    icon: "error",
+    title: "Error",
+    text: error,
+  });
+}
