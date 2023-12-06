@@ -2,21 +2,20 @@
 export function saveName(event) {
   event.preventDefault()
   const playerNameInput = document.getElementById('playerName');
-  const playerName = playerNameInput.value.trim();
-  const message = validatePlayerName(playerName);
-  if (message) {
-    if (localStorage.getItem("Username", playerName)) {
+  const playerNameValue = playerNameInput.value.trim();
+  const validPlayerName = validatePlayerName(playerNameValue);
+  if (validPlayerName) {
+    if (localStorage.getItem("Username", playerNameValue)) {
       messageError('User already exists. Choose a different name.')
     } else {
-      localStorage.setItem("Username", playerName);
+      localStorage.setItem("Username", playerNameValue);
       messageAprobe("Name Saved!", "You can play now")
-      //Aqui faltaria la Logica para ocultar el form.
+      hideForm()
     }
   }
 }
 
 function validatePlayerName(name) {
-
   if (!name){
     messageError('Empty name not valid')
     return false
@@ -35,16 +34,20 @@ function validatePlayerName(name) {
       return false
     }
     return true;
-  
   }
- 
 }
 
 export function playAnonymously() {
   messageAprobe("Playing anonymously", "Scores will not be saved.")
-  //Logica para ocultar el form o para evitar duplicidad de codigo, hacer una funcion para ocultarlo.
+  hideForm()
 }
 
+
+//Logica para ocultar el Form
+function hideForm(){
+  console.log("Test");
+
+}
 
 // Funciones para sweetAlert
 function messageAprobe(title, text) {
