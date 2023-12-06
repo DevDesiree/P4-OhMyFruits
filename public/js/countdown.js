@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (currentTime <= 10) {
                 toggleBlinking();
             }
-            
+
         }, 1000);
     }
 
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function toggleBlinking() {
-                const countdownElement = document.getElementById('countdown');
-                countdownElement.style.color = (countdownElement.style.color === 'rgb(194, 11, 80)') ? 'white' : '#c20b50ff';
-            }
+        const countdownElement = document.getElementById('countdown');
+        countdownElement.style.color = (countdownElement.style.color === 'rgb(194, 11, 80)') ? 'white' : '#c20b50ff';
+    }
 
     function gameOver() {
         document.getElementById('countdown').innerText = 'Game Over';

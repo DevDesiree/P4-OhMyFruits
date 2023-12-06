@@ -1,6 +1,6 @@
 //function stopGameAndReturnHome(params) {
-    //clearTimeout(gameTimer);
-  //  console.log("Game has been stopped.");
+//clearTimeout(gameTimer);
+//  console.log("Game has been stopped.");
 //}
 
 // Suponiendo que tienes un temporizador y animaciones para las frutas

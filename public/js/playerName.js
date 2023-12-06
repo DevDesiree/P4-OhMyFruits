@@ -16,7 +16,7 @@ export function saveName(event) {
 }
 
 function validatePlayerName(name) {
-  if (!name){
+  if (!name) {
     messageError('Empty name not valid')
     return false
 
@@ -44,7 +44,7 @@ export function playAnonymously() {
 
 
 //Logica para ocultar el Form
-function hideForm(){
+function hideForm() {
   console.log("Test");
 
 }

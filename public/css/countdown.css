@@ -1,5 +1,6 @@
 body {
-    background-image: url(''); /*poner la imagen de fondo que no puedo*/
+    background-image: url('');
+    /*poner la imagen de fondo que no puedo*/
     background-size: cover;
     background-position: center;
     font-family: 'Helvetica', sans-serif;
@@ -10,8 +11,8 @@ body {
 
 #countdown {
     position: fixed;
-    top: 60px; 
-    right: 20px; 
+    top: 60px;
+    right: 20px;
     background-color: #2c1c51ff;
     border: 2px solid #77cc0aff;
     color: #f3c89fff;

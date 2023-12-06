@@ -1,8 +1,11 @@
+//============make target START
 
 
-const imageContainer1 = document.getElementById('imageContainer1');
-let puntuation = 0
-
+// CONSTANTES<-- como tengo muchos genera un array???¿
+// const imageContainer1 = document.getElementById('imageContainer1');
+const imageContainer1 = document.querySelector('.image-container');
+console.log(imageContainer1);
+const imageContainer2 = document.getElementById('imageContainer2');
 
 // ARRAY Lista de imágenes o url
 
@@ -18,9 +21,10 @@ function getRandomImageUrl() {
     return imageUrls[randomIndex];
 }
 
+
 // Función para crear y mostrar imágenes aleatorias
 function showRandomImages() {
-    imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
+
     const numImages = 300;  // Ajusta el número de imágenes mostradas, puede cambiar con la dificultad
 
     const existingImages = imageContainer1.querySelectorAll('.image-fruit');  // Clonar las imágenes existentes para hacer la secuencia infinita
@@ -56,13 +60,15 @@ function showRandomImages() {
 // Mostrar imágenes aleatorias inicialmente y luego actualizar cada x segundos
 showRandomImages();
 setInterval(() => {
+    imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
     showRandomImages();
 }, 30000);
 
 
 /////// !! constante y funcion de derrivar fruta  y puntuacion Hay que hacer condicional      ///////       /////// 
 const shootSuceess = document.querySelectorAll(".image-fruit");
-
+//   const shootFail...
+let totalHits = 1
 
 /////// !! FUNCION y funcion de derrivar fruta  y puntuacion Hay que hacer condicional 
 // esto se puede modular pero no se como XD
@@ -76,20 +82,19 @@ shootSuceess.forEach(function (shootDown) {
 
         if (shootDown.classList.contains("watermelon")) {
             console.log("Es una sandía (watermelon)!");
-            puntuation += 1
 
         } else if (shootDown.classList.contains("cherry")) {
             console.log("Es una cereza (cherry)!");
-            puntuation += 5
 
-        } else if (shootDown.classList.contains("orange")) {
+        } else {
             console.log("es una naranja");
-            puntuation += 3
 
-        }
+        };
 
         const starImage = document.createElement("img");
         // Asigna la fuente de la nueva imagen
+
+
         starImage.src = "./public/img/star.png"; // Cambia esto por la ruta de tu nueva imagen
 
 
@@ -103,6 +108,8 @@ shootSuceess.forEach(function (shootDown) {
 
         // Agrega la nueva imagen al documento
         document.body.appendChild(starImage);
+        totalHits++;
+        console.log(totalHits);
 
         //elimina la Imagen
         setTimeout(function () {
@@ -130,11 +137,6 @@ displayGame.addEventListener('click', function (event) {
         console.log("exito");
     } else {
         console.log("fallo");
-        puntuation -= 1;
-    }
-    console.log(puntuation);
-    if (puntuation <= 0){
-        puntuation = 0
     }
 });
 

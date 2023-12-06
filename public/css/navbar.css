@@ -1,13 +1,12 @@
-
-.navbar{
+.navbar {
     background-color: #1A0505 !important;
 }
 
-.navbar-brand > img {
+.navbar-brand>img {
     width: 45px;
 
 }
 
-.fa-solid{
+.fa-solid {
     cursor: pointer;
 }
