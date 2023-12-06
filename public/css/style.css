@@ -11,9 +11,12 @@
 
 /* Styles Navbar */
 @import url(./navbar.css);
-
 @import url(./playerName.css);
 @import url(./startButton.css);
-@import url(./make_target.css)
+@import url(./countdown.css);
+@import url(./make_target.css);
+@import url(./restart.css);
+@import url(./footer.css);
+
 
 
