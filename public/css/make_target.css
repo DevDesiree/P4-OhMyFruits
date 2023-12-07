@@ -10,21 +10,22 @@
 
 
 #displayGame {
-    margin:0;
-    font-family:sans-serif;
-    min-height:80vh;
-    display:flex;
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 80vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
     background-color: #f9f7efff;
     user-select: none;
 }
 
-#stage-bkg-img{
-   width: 50%;
-   height: 50vh;
-   position:fixed;
+#displayGame{
+    background-image: url(../img/stageBkg.png);
+    background-size: cover;
+    background-repeat: no-repeat
+    
 }
 
 
@@ -32,23 +33,19 @@
     margin: 2em 0;
     /* max-width: 1000px; */
     width: 90%;
-    overflow:hidden;
-    -webkit-mask:linear-gradient(
-        90deg,
-        transparent,
-        #fff 30%,
-        #fff 80%,
-        transparent
-    );
-    mask:linear-gradient(
-        90deg,
-        transparent,
-        #fff 30%,
-        #fff 80%,
-        transparent
-    );
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg,
+            transparent,
+            #fff 30%,
+            #fff 80%,
+            transparent);
+    mask: linear-gradient(90deg,
+            transparent,
+            #fff 30%,
+            #fff 80%,
+            transparent);
 }
- 
+
 .image-container {
     width: max-content;
     /* padding: 2px 0; */
@@ -56,7 +53,7 @@
     align-items: flex-end;
     flex-wrap: nowrap;
     gap: 5.5em;
-    list-style:none;
+    list-style: none;
     border: red solid 1px;
 }
 
@@ -65,45 +62,51 @@
 
 }
 
- 
- .image-fruit {
+
+.image-fruit {
     max-width: 3em;
-    padding-left: 2em;
+    max-height: 9.5em;
+    padding-left: 2em;   
 
     /* animation: slideRightToLeft 30s linear infinite; Ajusta la duración de la animación */
     /* margin: 0.2% 0.2%;   Ajusta el espacio entre las imágenes */
-}  
+}
+
+.cherry{
+    margin-left: 6.3em;
+}
 
 
- @keyframes move {
+@keyframes move {
     0% {
         transform: translate(100%);
     }
-   
+
     100% {
         transform: translate(-15000px);
     }
-} 
+}
 
 
-.image-plank  {
+.image-plank {
     width: 100%;
     height: 80px;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
 
 @keyframes starSlideUp {
     0% {
-        opacity:80;
-        
+        opacity: 0.8;
+    }
+
     10% {
-        opacity:100;
+        opacity: 1;
     }
-    }
+
     100% {
         transform: translateY(-800%);
-        opacity:0,
+        opacity: 0;
     }
 }

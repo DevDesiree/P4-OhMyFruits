@@ -8,6 +8,11 @@
     background-color: #D83D3D;
     color: white;
     cursor: pointer;
+
+    padding: 8px 16px;
+    border: 4px solid #0f0a0a;
+    text-transform: uppercase;
+
 }
 .start-button:hover {
         background-image: linear-gradient(
@@ -23,8 +28,10 @@
           transparent 80% 90%,
           #9C2C2C 90% 100%
         );
-
         animation: background 8s linear infinite;
+    background-color: #b66886;
+    border-color: #f4f4f4;
+
 }
       
       @keyframes background {
@@ -37,8 +44,7 @@
       }
 
 
-@media (min-width: 768px) 
-{
+@media (min-width: 768px) {
     .start-button {
         padding: 15px 30px;
         width: initial;

@@ -3,6 +3,7 @@ footer {
     padding-bottom: 1rem;
     padding: 1.2rem;
 }
+
 .contact-icons {
     list-style-type: none;
     display: flex;
@@ -10,8 +11,9 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    
+
 }
+
 .copyright-container {
     width: 25%;
     height: 25px;
@@ -22,13 +24,15 @@ footer {
     text-align: center;
     margin: 0 auto;
 }
+
 @media (max-width: 768px) {
     .contact-icons {
-        flex-direction: row; 
+        flex-direction: row;
         flex-wrap: wrap;
     }
+
     .copyright-container {
-       font-size: 10px;
+        font-size: 10px;
         width: auto;
     }
 }
