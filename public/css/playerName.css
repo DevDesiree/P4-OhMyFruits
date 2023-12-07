@@ -1,6 +1,7 @@
 .form-group {
-  margin-bottom: 15px;
-}
+
+    margin-bottom: 15px;
+  }
 
 .form-label {
   display: block;
@@ -26,6 +27,7 @@
   border-radius: 4px;
   cursor: pointer;
   text-transform: uppercase;
+  font-family: VT323;
 }
 
 .save-name-button:hover,

@@ -1,4 +1,4 @@
-.start-button {
+.quit-button {
     font-family: VT323;
     width: 8rem;
     height: 3rem;
@@ -8,13 +8,8 @@
     background-color: #D83D3D;
     color: white;
     cursor: pointer;
-
-    padding: 8px 16px;
-    border: 4px solid #0f0a0a;
-    text-transform: uppercase;
-
 }
-.start-button:hover {
+.quit-button:hover {
         background-image: linear-gradient(
           145deg,
            transparent 10%,
@@ -28,10 +23,8 @@
           transparent 80% 90%,
           #9C2C2C 90% 100%
         );
-        animation: background 8s linear infinite;
-    background-color: #b66886;
-    border-color: #f4f4f4;
 
+        animation: background 8s linear infinite;
 }
       
       @keyframes background {
@@ -42,12 +35,3 @@
           background-position: 400px 0;
         }
       }
-
-
-@media (min-width: 768px) {
-    .start-button {
-        padding: 15px 30px;
-        width: initial;
-        text-align: center;
-    }
-}
