@@ -33,3 +33,4 @@ function hideGameButtons() {
 btnPlay.addEventListener("click", () => {
     startGame();
 });
+
