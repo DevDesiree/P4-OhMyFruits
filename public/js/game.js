@@ -19,9 +19,11 @@ function getRandomImageUrl() {
 }
 
 // Función para crear y mostrar imágenes aleatorias
-function showRandomImages() {
+export function showRandomImages() {
+    console.log('Showing random images...');
     imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
     const numImages = 300;  // Ajusta el número de imágenes mostradas, puede cambiar con la dificultad
+    
 
     const existingImages = imageContainer1.querySelectorAll('.image-fruit');  // Clonar las imágenes existentes para hacer la secuencia infinita
     existingImages.forEach((existingImage) => {
