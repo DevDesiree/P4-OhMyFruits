@@ -78,6 +78,7 @@ function showRandomImages() {
 
 
 // Mostrar imágenes aleatorias inicialmente y luego actualizar cada x segundos
+
 showRandomImages();
 setInterval(() => {
     showRandomImages();
@@ -122,7 +123,7 @@ shootSuceess.forEach(function (shootDown) {
 
         const pointImage = document.createElement("img");
         // Asigna nueva imagen
-        pointImage.src = fruitPointImage; // ruta de star
+        pointImage.src = fruitPointImage; 
 
         // Establece algunos estilos para la nueva imagen
         pointImage.style.position = "absolute";
@@ -152,18 +153,30 @@ shootSuceess.forEach(function (shootDown) {
 const displayGame = document.getElementById('displayGame');
 const fruta = document.querySelectorAll(".image-fruit");
 
+
+
 displayGame.addEventListener('click', function (event) {
     const clickedElement = event.target;
+    let gameSound= document.createElement("audio")
+    
+    let shootSound;
 
-    // Verificar si el clic fue en una imagen dentro del contenedor
+
     if (clickedElement.classList.contains("image-fruit")) {
          console.log("exito");
+         shootAudio = './public/sounds/sucessSound.mp3';
+
     } else {
         totalScore -= 1
         console.log(`Fallo -1! ${totalScore}`);
+        shootAudio = './public/sounds/failedSound.mp3';
     }
+
+    gameSound.setAttribute("src", "./public/sounds/sucessSound.mp3")
+    etiquetaAudio.play()
    
 });
+
 
 
 

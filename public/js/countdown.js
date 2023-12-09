@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const times = {
+    const move pints u = {
         easy: 120,
         normal: 60,
         hard: 30

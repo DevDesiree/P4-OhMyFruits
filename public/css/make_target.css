@@ -80,7 +80,7 @@
     margin-left: 6.3em;
 }
 
-/* @keyframes move {
+ @keyframes move {
     0% {
         transform: translateX(100%);
     }
@@ -88,7 +88,7 @@
     100% {
         transform: translateX(-15000px);
     }
-}  */
+}  
 
 
 /* el happy no puede funcionar si no se usa el mismo tiempo */
