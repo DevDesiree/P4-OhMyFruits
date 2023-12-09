@@ -41,6 +41,7 @@
             </div>
         </nav>
     </header>
+    <div class="backgroundImage">
     <main>
         <!-- Formulario de Usuario -->
         <section>
@@ -151,15 +152,15 @@
         <section>
             <div id="countdownSection" style="display: none;">
                 <div id="countdown">
-                    <button class="difficulty-button" onclick="changeDifficulty('easy')">Easy</button>
-                    <button class="difficulty-button" onclick="changeDifficulty('normal')">Normal</button>
-                    <button class="difficulty-button" onclick="changeDifficulty('hard')">Hard</button>
+                    <button class="difficulty-button" onclick="changeDifficulty('easy')" id="easyButton">Easy</button>
+                    <button class="difficulty-button" onclick="changeDifficulty('normal')" id="normalButton">Normal</button>
+                    <button class="difficulty-button" onclick="changeDifficulty('hard')" id="hardButton">Hard</button>
                 </div>
             </div>
         </section>
 
     </main>
-
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -183,6 +184,7 @@
     <script type="module" src="./public/js/startButton.js"></script>
     <script type="module" src="./public/js/game.js"></script>
     <script src="./public/js/countdown.js"></script>
+    <script src="./public/js/deficulltysounds.js"></script>
 </body>
 
 </html>
