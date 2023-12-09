@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="playerName">Name:</label>
                         <input type="text" id="playerName" class="player-name" name="playerName" required>
-                        <button type="button" id="saveName" class="save-name-button">Save Name</button>
+                        <button type="button" id="saveName" class="save-name-button">SAVE</button>
                     </div>
                     <div class="form-group">
                         <button type="button" id="playAnonymously" class="anonymously-button">Play Anonymously</button>
@@ -73,12 +73,12 @@
                 <div class="quit-button">
                     <button type="button" id="quitButton" class="quit-button">QUIT GAME</button>
                 </div>
-            </div>
-
-
-            <div id=" modalInstructions">
+                <section>
+                <div class="how-to-play-button"> <button type="button" id="howToPlayButton" class="how-to-play-button">HOW TO PLAY</button>
+            <div id=" modalInstructions" class="instructions">
                 <!-- Aqui irá el modal de las instrucciones que se mostrara al clicar en el boton How to Play -->
                 <h2>HOW TO PLAY</h2>
+                <div><img src="./public/img/Casey The Archer.jpg" class="casey-the-archer" alt="Casey The Archer"></div>
                 <p>
                     <br> Help Casey Knock Down the Fruits 🍒🍊🍉
                     <br><br>
@@ -104,8 +104,8 @@
                     4. Try to get the highest score possible before the time runs out!<br><br>
                     Good luck and have fun helping Casey knock down the fruits! 😊
                 </p>
-            </div>
-
+                </div>
+            </div></section>
         </section>
 
         <!-- Juego -->
@@ -152,9 +152,7 @@
         </ul>
 
         <div>
-            <p>
-                Copyright <i class="fa-regular fa-copyright"></i> Oh my fruit! 2023
-            </p>
+            <p>Copyright <i class="fa-regular fa-copyright"></i>Carnival DOM 2023</p>
         </div>
     </footer>
     <script type="module" src="./public/js/main.js"></script>
