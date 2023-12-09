@@ -1,8 +1,7 @@
 // Importar funciones
 import { toggleSound } from "./navbar.js";
-import { saveName, playAnonymously } from "./playerName.js";
-
-
+import { saveName, playAnonymously, startGame } from "./playerName.js";
+import { showRandomImages } from "./game.js"; 
 
 // Declaracion de constantes
 const changeSound = document.getElementById("iconSound");

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (playerName && selectedDifficulty) {
             hideGameButtons();
-            // CountdownModule.initializeCountdown(selectedDifficulty);
+            CountdownModule.initializeCountdown(selectedDifficulty);
             showRandomImages();
         } else {
             messageError('Please enter your name and choose a difficulty level.');
