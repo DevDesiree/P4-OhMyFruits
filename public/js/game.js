@@ -47,6 +47,8 @@ function showRandomImages() {
 
         imageContainer1.appendChild(imageElement);
         imageElement.style.animation = "move 30s linear infinite";
+
+        
     }
 }
 
@@ -64,9 +66,13 @@ setInterval(() => {
 const shootSuceess = document.querySelectorAll(".image-fruit");
 
 
+
 /////// !! FUNCION y funcion de derrivar fruta  y puntuacion Hay que hacer condicional 
 // esto se puede modular pero no se como XD
 //aqui al no eliminar el elemento, sigue podiendose hacer click sobre él y no vale, hay que cambialre la clase
+
+// IMPORTANTE cuando inicia la partida poner totalScore=0
+let totalScore = 0;
 
 shootSuceess.forEach(function (shootDown) {
     shootDown.addEventListener("click", function (shootClick) {
@@ -75,22 +81,22 @@ shootSuceess.forEach(function (shootDown) {
         this.style.opacity = "0";
 
         if (shootDown.classList.contains("watermelon")) {
-            console.log("Es una sandía (watermelon)!");
-            puntuation += 1
+            totalScore += 1
+            console.log(`Es una sandía (watermelon)! ${totalScore}`);
 
         } else if (shootDown.classList.contains("cherry")) {
-            console.log("Es una cereza (cherry)!");
-            puntuation += 5
+            totalScore += 5
+            console.log(`Es una sandía (cherry)! ${totalScore}`);
 
         } else if (shootDown.classList.contains("orange")) {
-            console.log("es una naranja");
-            puntuation += 3
+            totalScore += 3
+            console.log(`Es una sandía (orange)! ${totalScore}`);
 
         }
 
         const starImage = document.createElement("img");
-        // Asigna la fuente de la nueva imagen
-        starImage.src = "./public/img/star.png"; // Cambia esto por la ruta de tu nueva imagen
+        // Asigna nueva imagen
+        starImage.src = "./public/img/star.png"; // ruta de star
 
 
         // Establece algunos estilos para la nueva imagen
@@ -127,10 +133,10 @@ displayGame.addEventListener('click', function (event) {
 
     // Verificar si el clic fue en una imagen dentro del contenedor
     if (clickedElement.classList.contains("image-fruit")) {
-        console.log("exito");
+         console.log("exito");
     } else {
-        console.log("fallo");
-        puntuation -= 1;
+        totalScore -= 1
+        console.log(`Fallo -1! ${totalScore}`);
     }
     console.log(puntuation);
     if (puntuation <= 0){

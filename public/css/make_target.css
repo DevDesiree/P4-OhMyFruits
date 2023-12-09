@@ -54,22 +54,31 @@
     flex-wrap: nowrap;
     gap: 5.5em;
     list-style: none;
-    border: red solid 1px;
+    /* border: red solid 1px; */
+    cursor:url(../img/mouseTargetOff.png)64 64, auto; 
 }
 
 .infinite-carousel .image-fruit {
     max-width: 20em;
-
 }
 
 
 .image-fruit {
     max-width: 3em;
     max-height: 9.5em;
-    padding-left: 2em;   
+    padding-left: 2em;  
 
+  
+
+    
     /* animation: slideRightToLeft 30s linear infinite; Ajusta la duración de la animación */
     /* margin: 0.2% 0.2%;   Ajusta el espacio entre las imágenes */
+}
+
+.image-fruit:hover {
+    
+    filter: brightness(2.75);
+    cursor:url(../img/mouseTargetOn.png) 64 64, auto; 
 }
 
 .cherry{
@@ -79,13 +88,26 @@
 
 @keyframes move {
     0% {
-        transform: translate(100%);
+        transform: translateX(100%);
     }
 
     100% {
-        transform: translate(-15000px);
+        transform: translateX(-15000px);
     }
 }
+
+@keyframes happy {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.8);
+    }
+    100% {
+        transform: scaleY(1);
+      }
+  }
+
 
 
 .image-plank {
@@ -104,9 +126,14 @@
     10% {
         opacity: 1;
     }
-
+    80% {
+        opacity: 1;
+    }
     100% {
         transform: translateY(-800%);
         opacity: 0;
     }
 }
+
+
+
