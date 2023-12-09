@@ -1,7 +1,6 @@
 
 
 const imageContainer1 = document.getElementById('imageContainer1');
-let puntuation = 0
 
 
 // ARRAY Lista de imágenes o url
@@ -13,17 +12,36 @@ const cherry = './public/img/CherryHappy.png';
 const imageUrls = [watermelon, orange, cherry];
 
 // Función aleatorio, para obtener imagen del array aleatorio
+
+// si necesitamos un easy u unhard, esto estaria fuera o  randomidex se calculafuera
+// cambiaria la pcnstante randomIndex por dificultIndex   -> 
+
+//modifica el nª de imagenes
+// EASY dificultIndex = 1;
+// Normal dificultIndex = Math.floor(Math.random() * 2;
+// Hard dificultIndex = Math.floor(Math.random() *  imageUrls.length);
+
+// EASY dificultIndex = 1;
+// Normal dificultIndex = Math.floor(Math.random() * 2;
+// Hard dificultIndex = Math.floor(Math.random() *  imageUrls.length);
+
+
+
 function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
 }
 
+//! añadir constante de numImges para el numero de imagnees segun dificultad
+//! añadir contante de 
+
 // Función para crear y mostrar imágenes aleatorias
 function showRandomImages() {
     imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
-    const numImages = 300;  // Ajusta el número de imágenes mostradas, puede cambiar con la dificultad
+    const numImages = 300;  //número de imágenes mostradas💢
 
-    const existingImages = imageContainer1.querySelectorAll('.image-fruit');  // Clonar las imágenes existentes para hacer la secuencia infinita
+    // Clonar las imágenes existentes para hacer la secuencia infinita
+    const existingImages = imageContainer1.querySelectorAll('.image-fruit');  
     existingImages.forEach((existingImage) => {
         const clone = existingImage.cloneNode(true);
         imageContainer1.appendChild(clone);
@@ -35,6 +53,7 @@ function showRandomImages() {
         const imageElement = document.createElement('img');
         imageElement.src = imageUrl;
         imageElement.classList.add('image-fruit');
+        imageElement.classList.add('moving-fruit');
 
         if (imageUrl === watermelon) {
             imageElement.classList.add('watermelon');
@@ -48,11 +67,14 @@ function showRandomImages() {
         imageContainer1.appendChild(imageElement);
         imageElement.style.animation = "move 30s linear infinite";
 
-        
+        //💢si hay dificultades, cambiar los 30seguntos
     }
 }
 
 
+// ! sacar una variable de dificultad y muestre el tiempo 30000 30seg
+// normal 100000 easy 200000   Aunque yo le 
+// easy cambia tiempo y frutas y numero de imagenes
 
 
 // Mostrar imágenes aleatorias inicialmente y luego actualizar cada x segundos
@@ -61,17 +83,13 @@ setInterval(() => {
     showRandomImages();
 }, 30000);
 
+    
+const shootSuceess = document.querySelectorAll(".moving-fruit");
+let fruitPointImage;
 
-/////// !! constante y funcion de derrivar fruta  y puntuacion Hay que hacer condicional      ///////       /////// 
-const shootSuceess = document.querySelectorAll(".image-fruit");
 
 
-
-/////// !! FUNCION y funcion de derrivar fruta  y puntuacion Hay que hacer condicional 
-// esto se puede modular pero no se como XD
-//aqui al no eliminar el elemento, sigue podiendose hacer click sobre él y no vale, hay que cambialre la clase
-
-// IMPORTANTE cuando inicia la partida poner totalScore=0
+//💢 IMPORTANTE cuando inicia la partida poner totalScore=0
 let totalScore = 0;
 
 shootSuceess.forEach(function (shootDown) {
@@ -81,39 +99,46 @@ shootSuceess.forEach(function (shootDown) {
         this.style.opacity = "0";
 
         if (shootDown.classList.contains("watermelon")) {
-            totalScore += 1
+            totalScore += 2
             console.log(`Es una sandía (watermelon)! ${totalScore}`);
+            shootDown.classList.remove("image-fruit");
+            shootDown.classList.remove("watermelon");
+            fruitPointImage = './public/img/WatermelonHappyBig.png';
 
         } else if (shootDown.classList.contains("cherry")) {
-            totalScore += 5
-            console.log(`Es una sandía (cherry)! ${totalScore}`);
+            totalScore += 6
+            console.log(`Es una  (cherry)! ${totalScore}`);
+            shootDown.classList.remove("image-fruit");
+            shootDown.classList.remove("cherry");
+            fruitPointImage = './public/img/CherryHappy.png';
 
         } else if (shootDown.classList.contains("orange")) {
-            totalScore += 3
-            console.log(`Es una sandía (orange)! ${totalScore}`);
-
+            totalScore += 4
+            console.log(`Es una  (orange)! ${totalScore}`);
+            shootDown.classList.remove("image-fruit");
+            shootDown.classList.remove("orange");
+            fruitPointImage = './public/img/OrangeangryBig.png';
         }
 
-        const starImage = document.createElement("img");
+        const pointImage = document.createElement("img");
         // Asigna nueva imagen
-        starImage.src = "./public/img/star.png"; // ruta de star
-
+        pointImage.src = fruitPointImage; // ruta de star
 
         // Establece algunos estilos para la nueva imagen
-        starImage.style.position = "absolute";
-        starImage.style.left = clickX + "px";
-        starImage.style.top = clickY + "px";
-        starImage.style.opacity = "0";
-        starImage.style.width = "150px";
-        starImage.style.animation = "starSlideUp 1s ease-in-out"; // Ajusta la duración y la función de temporización según sea necesario
+        pointImage.style.position = "absolute";
+        pointImage.style.left = clickX + "px";
+        pointImage.style.top = clickY + "px";
+        pointImage.style.opacity = "0";
+        pointImage.style.width = "150px";
+        pointImage.style.animation = "starSlideUp 1s ease-in-out"; // 
 
         // Agrega la nueva imagen al documento
-        document.body.appendChild(starImage);
+        document.body.appendChild(pointImage);
 
         //elimina la Imagen
         setTimeout(function () {
             addEventListener
-            document.body.removeChild(starImage);
+            document.body.removeChild(pointImage);
         }, 1100);
 
     });
@@ -126,7 +151,6 @@ shootSuceess.forEach(function (shootDown) {
 
 const displayGame = document.getElementById('displayGame');
 const fruta = document.querySelectorAll(".image-fruit");
-// const equis = document.getElementById('equis');
 
 displayGame.addEventListener('click', function (event) {
     const clickedElement = event.target;
@@ -138,10 +162,7 @@ displayGame.addEventListener('click', function (event) {
         totalScore -= 1
         console.log(`Fallo -1! ${totalScore}`);
     }
-    console.log(puntuation);
-    if (puntuation <= 0){
-        puntuation = 0
-    }
+   
 });
 
 
