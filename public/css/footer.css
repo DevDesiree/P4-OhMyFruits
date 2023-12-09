@@ -1,7 +1,12 @@
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #6C53A4;
     padding-bottom: 1rem;
     padding: 1.2rem;
+    color: white;
+    text-align: center;
 }
 
 .contact-icons {
@@ -11,7 +16,6 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
 }
 
 .copyright-container {
@@ -25,14 +29,20 @@ footer {
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+    footer{
+        background-color: rgb(245, 24, 189);
+    }
     .contact-icons {
+        width: 35%;
+        height: 35px;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .copyright-container {
-        font-size: 10px;
+        font-size: 8dvh;
         width: auto;
+        text-align: center;
     }
 }
