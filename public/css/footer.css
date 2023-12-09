@@ -18,6 +18,10 @@ footer {
     gap: 1rem;
 }
 
+.contact-icons i {
+    color: #f3c89f;
+}
+
 .copyright-container {
     width: 25%;
     height: 25px;
