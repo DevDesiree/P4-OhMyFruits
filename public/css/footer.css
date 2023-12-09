@@ -16,7 +16,6 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
 }
 
 .copyright-container {
@@ -30,14 +29,20 @@ footer {
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+    footer{
+        background-color: rgb(245, 24, 189);
+    }
     .contact-icons {
+        width: 35%;
+        height: 35px;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .copyright-container {
-        font-size: 10px;
+        font-size: 8dvh;
         width: auto;
+        text-align: center;
     }
 }
