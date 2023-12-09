@@ -7,7 +7,7 @@
   margin-top: 1.5em;
 }
 
-h2{
+#nameContainer h2{
   margin-top: 1em;
   font-size: 1.2em;
 }
@@ -40,16 +40,6 @@ h2{
 .save-name-button,
 .anonymously-button {
   margin: auto;
-  width: 60%;
-  padding: 10px;
-  font-size: 1.25em;
-  background-color: #C20B50;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-family: VT323;
 }
 
 .save-name-button:hover,

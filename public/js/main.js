@@ -22,14 +22,6 @@ btnPlayAnonymously.addEventListener("click", () => {
     playAnonymously();
 });
 
-function hideGameButtons() {
-    const gameButtonsSection = document.getElementById('gameButtonsSection');
-    gameButtonsSection.style.display = 'none';
-
-    const countdownSection = document.getElementById('countdownSection');
-    countdownSection.style.display = 'block';
-}
-
 btnPlay.addEventListener("click", () => {
     startGame();
 });

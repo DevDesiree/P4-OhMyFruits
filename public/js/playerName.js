@@ -97,13 +97,7 @@ function hideForm() {
     gameContainer.style.display = 'block';
 }
 
-function hideGameButtons() {
-  const gameButtonsSection = document.getElementById('gameButtonsSection');
-  gameButtonsSection.style.display = 'none';
 
-  const countdownSection = document.getElementById('countdownSection');
-  countdownSection.style.display = 'block';
-}
 
 function hideFormAndShowGame() {
   const nameContainer = document.getElementById('nameContainer');
