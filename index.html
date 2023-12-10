@@ -48,7 +48,11 @@
     </header>
 
     <main>
+
         <section id="containerBannerImgAndForm">
+          <section id="gameTitle" class="game-title">
+            <h1>🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
+          </section>
             <div id="bannerImg">
                 <img src="./public/img/WatermelonHappyBig.png" alt="">
             </div>
@@ -80,25 +84,15 @@
                 </div>
             </section>
         </section>
-
-        <!-- Boton jugar e Instrucciones de juego -->
-
         <section id="instructionsAndPlay">
             <div class="content-instructions-play">
                 <div class="content-instructions">
                     <div id="modalInstructions">
-                        <!-- Aqui irá el modal de las instrucciones que se mostrara al clicar en el boton How to Play -->
-
                         <div class="img-casey">
                             <img src="./public/img/CaseyTheArcher.jpg" alt="Casey The Archer">
                         </div>
                         <div class="instructions">
-                            <p>
-                                <br> Help Casey Knock Down the Fruits 🍒🍊🍉
-                                <br><br>
-                                <strong>Game Objective.</strong>
-                                <br>
-                                Help Casey knock down as many fruits as you can in the allotted time. <br>
+                            <p><br>Help Casey Knock Down the Fruits🍒🍊🍉<br>
                                 <br><strong>Each fruit has a different point value:<br></strong>
                                 - **Cherries**: 5 points<br>
                                 - **Oranges**: 3 points<br>
@@ -112,7 +106,7 @@
                                 - Normal**: 1 minute<br>
                                 - Easy**: 2 minutes<br><br>
                                 <strong>How to Play:</strong><br>
-                                - Try to get the highest score possible before the time runs out!<br><br>
+                                - Try to get the highest score possible before the time runs out!<br>
                                 Good luck and have fun helping Casey knock down the fruits! 😊
                             </p>
                         </div>
@@ -148,6 +142,7 @@
                     </div>
                 </div>
             </div>
+           
         </section>
 
         <!-- boton restart -->
@@ -164,6 +159,9 @@
                         id="normalButton">Normal</button>
                     <button class="difficulty-button" onclick="changeDifficulty('hard')" id="hardButton">Hard</button>
                 </div>
+                <div class="game-over">
+                    <img src="./public/img/gameOverDisplay_2.jpeg" alt="gameOverImage" class="game-over-image">
+                </div>    
             </div>
         </section>
 
