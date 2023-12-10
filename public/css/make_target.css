@@ -131,5 +131,15 @@
     }
 }
 
+/* Estilos para pantallas de escritorio */
+@media only screen and (min-width: 1024px) {}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    
+}
 
 
