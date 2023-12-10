@@ -1,8 +1,13 @@
-let button = document.getElementById("howToPlayButton");
-let instructions = document.getElementById("instructions");
 
-// Añadir un evento al botón para que al hacer clic se muestre el texto
-button.addEventListener("click", function() {
-  // Cambiar el estilo del elemento con el texto a display: block
-  instructions.style.display = "block";
-});
+export function showInstructions(howToPlayButton){
+  const modalInstructions = document.getElementById("modalInstructions");
+  const buttonsGame = document.querySelector(".buttons-game");
+  modalInstructions.style.display = "block"
+  howToPlayButton.style.display = "none"
+  buttonsGame.style.height = "50px"
+}
+
+
+export function btnPlay(){
+  console.log("");
+}

@@ -9,44 +9,38 @@ export function saveName(event) {
   const playerNameInput = document.getElementById('playerName');
   const playerNameValue = playerNameInput.value.trim();
   const validPlayerName = validatePlayerName(playerNameValue);
+
   const difficultySelect = document.getElementById('difficulty');
-  const selectedDifficulty = difficultySelect.value;
+  //const selectedDifficulty = validateSelected(difficultySelect)
 
   console.log('Player Name:', playerNameValue);  
-  console.log('Selected Difficulty:', selectedDifficulty);
-
-
-
+  console.log('Selected Difficulty:', difficultySelect.value);
   
-  if (validPlayerName && selectedDifficulty) {
-    if (localStorage.getItem("Username") === playerNameValue) {
+  if (validPlayerName && difficultySelect) {
+    if (difficultySelect.value == ""){
+      messageError('Please choose a Difficulty');
+      return false;
+    }
+
+    if (localStorage.getItem("Username", playerNameValue)) {
       console.log('User already exists');
       messageError('User already exists. Choose a different name.');
     } else {
       console.log('Saving user information to localStorage');
       localStorage.setItem("Username", playerNameValue);
-      localStorage.setItem("Difficulty", selectedDifficulty);
-      restartGame();
-      hideForm();
+      localStorage.setItem("Difficulty", difficultySelect);
+      messageAprobe("Name Saved!", "You can play now")
+
+      // restartGame();
+      hideFormShowInstructions();
     }
-  } else {
-    console.log('Validation error');
-    messageError('Please enter your name and choose a difficulty level.');
-  }
+    
+  } 
 }
 
-export function playAnonymously() {
-  console.log('Play Anonymously button clicked');
-  const anonymousName = "Anonymous Player";
-  const selectedDifficulty = document.getElementById('difficulty').value;
 
-  localStorage.setItem("Username", anonymousName);
-  localStorage.setItem("Difficulty", selectedDifficulty);
-  restartGame(); 
-  hideForm();
-}
 
-export function validatePlayerName(name) {
+function validatePlayerName(name) {
   console.log('Validating Player Name:', name);
   if (!name) {
     console.log('Empty name not valid');
@@ -74,7 +68,28 @@ export function validatePlayerName(name) {
 
   return true;
 }
-//añadido? yass
+
+export function playAnonymously() {
+  console.log('Play Anonymously button clicked');
+  const anonymousName = "Anonymous Player";
+  const selectedDifficulty = document.getElementById('difficulty').value;
+
+  localStorage.setItem("Username", anonymousName);
+  localStorage.setItem("Difficulty", selectedDifficulty);
+  // restartGame(); 
+  hideFormShowInstructions();
+}
+
+
+
+function hideFormShowInstructions() {
+  const formUser = document.getElementById("formUser")
+  const instructionsAndPlay = document.getElementById("instructionsAndPlay")
+  formUser.style.display = 'none';
+  instructionsAndPlay.style.display = 'block'
+}
+
+// añadido? yass
 export function startGame() {
   console.log('Start Game function called');
   const playerName = localStorage.getItem('Username');
@@ -90,42 +105,33 @@ export function startGame() {
 }
 
 
-function hideForm() {
-  const nameContainer = document.getElementById('nameContainer');
-  nameContainer.style.display = 'none';
-  const gameContainer = document.getElementById('gameContainer');
-    gameContainer.style.display = 'block';
-}
+// function hideFormAndShowGame() {
+//   const nameContainer = document.getElementById('nameContainer');
+//   nameContainer.style.display = 'none';
+
+//   const gameContainer = document.getElementById('gameContainer');
+//   gameContainer.style.display = 'block';
+
+//   // Inicia el temporizador cuando se muestra el juego
+//   const selectedDifficulty = localStorage.getItem('Difficulty');
+//   initializeCountdown(selectedDifficulty);
+// }
+
+
+// function restartGame() {
+//   const startButton = document.getElementById('startButton');
+//   const restartButton = document.getElementById('restartButton');
+
+//   hideGameButtons();
+//   hideFormAndShowGame();
+//   startGame(localStorage.getItem('Difficulty'));
+
+//   restartButton.style.display = 'none';
+// }
 
 
 
-function hideFormAndShowGame() {
-  const nameContainer = document.getElementById('nameContainer');
-  nameContainer.style.display = 'none';
-
-  const gameContainer = document.getElementById('gameContainer');
-  gameContainer.style.display = 'block';
-
-  // Inicia el temporizador cuando se muestra el juego
-  const selectedDifficulty = localStorage.getItem('Difficulty');
-  initializeCountdown(selectedDifficulty);
-}
-
-
-function restartGame() {
-  const startButton = document.getElementById('startButton');
-  const restartButton = document.getElementById('restartButton');
-
-  hideGameButtons();
-  hideFormAndShowGame();
-  startGame(localStorage.getItem('Difficulty'));
-
-  restartButton.style.display = 'none';
-}
-
-
-
-export function messageAprobe(title, text) {
+function messageAprobe(title, text) {
   Swal.fire({
     title: title,
     text: text,
@@ -133,7 +139,7 @@ export function messageAprobe(title, text) {
   });
 }
 
-export function messageError(customMessage) {
+function messageError(customMessage) {
   console.log('messageError called with:', customMessage);
   Swal.fire({
     icon: "error",

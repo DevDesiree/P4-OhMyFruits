@@ -1,13 +1,12 @@
-#formUser {
-    display: none;
-}
+
 
 #instructionsAndPlay {
+    display: none;
     margin-top: 2em;
 }
 
 #modalInstructions {
-    display: flex;
+    display: none;
     font-family: VT323;
     font-size: 16px;
     background-color: #F6DE84;
