@@ -172,7 +172,7 @@ shootSuccess.forEach(function (shootDown) {
       //  pointImage.style.animation = "starSlideUp 1s ease-in-out"; // 
 
         // Agrega la nueva imagen al documento
-        displayGame.appendChild(pointImage);
+        shootSuccess.appendChild(pointImage);
 
         //elimina la Imagen
         // setTimeout(function () {

@@ -45,8 +45,11 @@
     top: 50%;
     left: 50%;
     text-align: center;
-    color: #fa0000;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    color: #ddfa00;
+    font-size: 4em;
+    font-family: VT323;
+    text-shadow: 0 0 30px #fff;
+
 }
 
 .infinite-carousel {
