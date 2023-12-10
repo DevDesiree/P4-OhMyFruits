@@ -84,9 +84,9 @@ export function playAnonymously() {
 
 
 function hideFormShowInstructions() {
-  const formUser = document.getElementById("formUser")
+  const containerBannerImgAndForm = document.getElementById("containerBannerImgAndForm")
   const instructionsAndPlay = document.getElementById("instructionsAndPlay")
-  formUser.style.display = 'none';
+  containerBannerImgAndForm.style.display = 'none';
   instructionsAndPlay.style.display = 'block'
 }
 

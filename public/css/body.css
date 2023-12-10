@@ -2,5 +2,6 @@ body {
     background-image: url('../img/backgroundGame.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-position: center center;
+    min-height: 100vh;
 }
