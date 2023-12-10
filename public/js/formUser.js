@@ -76,6 +76,7 @@ export function playAnonymously() {
 
   localStorage.setItem("Username", anonymousName);
   localStorage.setItem("Difficulty", selectedDifficulty);
+  messageAprobe("Playing anonymously", "Scores will not be saved.")
   // restartGame(); 
   hideFormShowInstructions();
 }
