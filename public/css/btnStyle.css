@@ -1,13 +1,15 @@
-.restart-button {
+
+.btn-style {
   font-family: VT323;
-  width: 7rem;
-  height: 2rem;
-  font-size: 1.2rem;
-  border-radius: 40px;
-  border: none;
-  background-color: #D83D3D;
+  width: 8em;
+  font-size: 1.25rem;
+  border-radius: 50px;
+  background-color: #FF4B65;
   color: white;
   cursor: pointer;
+  padding: 10px;
+  border: 1px solid #0f0a0a;
+  text-transform: uppercase;
 }
 
 button:hover {
@@ -22,8 +24,10 @@ button:hover {
       #9C2C2C 70% 80%,
       transparent 80% 90%,
       #9C2C2C 90% 100%);
-
   animation: background 8s linear infinite;
+  background-color: #b66886;
+  border-color: #f4f4f4;
+
 }
 
 @keyframes background {
@@ -35,3 +39,12 @@ button:hover {
     background-position: 400px 0;
   }
 }
+
+/*
+@media (min-width: 768px) {
+  .start-button {
+    padding: 15px 30px;
+    width: initial;
+    text-align: center;
+  }
+} */

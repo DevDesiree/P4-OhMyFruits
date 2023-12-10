@@ -1,0 +1,81 @@
+#formUser{
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+  margin: auto;
+  width: 90%;
+  margin-top: 1.5em;
+}
+
+#nameContainer h2{
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  padding: 25px;
+}
+
+.form-group label{
+  font-size: 1.15em;
+}
+
+.player-name, .form-input{
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-input{
+  text-align: center;
+  color: gray;
+}
+
+
+.save-name-button,
+.anonymously-button {
+  margin: auto;
+}
+
+.save-name-button:hover,
+.anonymously-button:hover {
+  background-color: #b66886;
+  border-color: #f4f4f4;
+
+}
+
+
+/* .text-message,
+#message {
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+
+/* Estilos para pantallas de escritorio */
+@media only screen and (min-width: 1024px) {
+  #formUser {
+    width: 40%;
+  }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  #formUser {
+    width: 60%;
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+  
+}
