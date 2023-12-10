@@ -48,34 +48,41 @@
     </header>
 
     <main>
-        <section id="gameTitle" class="game-title">
+
+        <section id="containerBannerImgAndForm">
+          <section id="gameTitle" class="game-title">
             <h1>🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
-        </section>
-        <section id="formUser">
-            <div id="nameContainer">
-                <h2>Choose your Username and Level difficulty</h2>
-                <form id="playerForm">
-                    <div class="form-group">
-                        <label for="playerName">Name:</label>
-                        <input type="text" id="playerName" class="player-name" name="playerName" required>
-
-                        <label for="difficulty">Select Difficulty:</label>
-                        <select id="difficulty" class="form-input" required>
-                            <option value="" disabled selected>Select difficulty</option>
-                            <option value="easy">Easy</option>
-                            <option value="normal">Normal</option>
-                            <option value="hard">Hard</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" id="saveName" class="save-name-button btn-style">SAVE</button>
-                        <button type="button" id="playAnonymously"
-                            class="anonymously-button btn-style">Play Anonymously</button>
-                    </div>
-                    <div id="message"></div>
-
-                </form>
+          </section>
+            <div id="bannerImg">
+                <img src="./public/img/WatermelonHappyBig.png" alt="">
             </div>
+            <!-- Formulario de Usuario -->
+            <section id="formUser">
+                <div id="nameContainer">
+                    <h2>Choose your Username and Level difficulty</h2>
+                    <form id="playerForm">
+                        <div class="form-group">
+                            <label for="playerName">Name:</label>
+                            <input type="text" id="playerName" class="player-name" name="playerName" required placeholder="Insert your username">
+
+                            <label for="difficulty">Select Difficulty:</label>
+                            <select id="difficulty" class="form-input" required>
+                                <option value="" disabled selected>Select difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="normal">Normal</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="saveName" class="save-name-button btn-style">SAVE</button>
+                            <button type="button" id="playAnonymously" class="anonymously-button btn-style">Play
+                                Anonymously</button>
+                        </div>
+                        <div id="message"></div>
+
+                    </form>
+                </div>
+            </section>
         </section>
         <section id="instructionsAndPlay">
             <div class="content-instructions-play">
@@ -108,7 +115,6 @@
 
                 <div class="buttons-game">
                     <!-- Aqui irán los botones de Play y How to Play -->
-                    <audio id="startButtonSound" src="./public/sounds/startButtonSound.wav"></audio>
                     <button type="button" id="startButton" class="start-button btn-style">START GAME</button>
                     <button type="button" id="howToPlayButton" class="how-to-play-button btn-style">HOW TO PLAY</button>
                 </div>
@@ -146,7 +152,7 @@
 
         <!-- Contador -->
         <section>
-            <div id="countdownSection">
+            <div id="countdownSection " style="display: none;">
                 <div id="countdown">
                     <button class="difficulty-button" onclick="changeDifficulty('easy')" id="easyButton">Easy</button>
                     <button class="difficulty-button" onclick="changeDifficulty('normal')"
@@ -185,6 +191,8 @@
     <script type="module" src="./public/js/game.js"></script>
     <script src="./public/js/countdown.js"></script>
     <script src="./public/js/deficulltysounds.js"></script> -->
+    <script type="module" src="./public/js/startButton.js"></script>
+    <script type="module" src="./public/js/sounds.js"></script>
 </body>
 
 </html>

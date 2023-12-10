@@ -22,14 +22,14 @@ export function saveName(event) {
       return false;
     }
 
-    if (localStorage.getItem("Username", playerNameValue)) {
+    if (localStorage.getItem("Username") == playerNameValue) {
       console.log('User already exists');
       messageError('User already exists. Choose a different name.');
     } else {
       console.log('Saving user information to localStorage');
       localStorage.setItem("Username", playerNameValue);
-      localStorage.setItem("Difficulty", difficultySelect);
-      messageAprobe("Name Saved!", "You can play now")
+      localStorage.setItem("Difficulty", difficultySelect.value);
+      messageAprobe("Saved!", "You can play now")
 
       // restartGame();
       hideFormShowInstructions();
@@ -37,7 +37,6 @@ export function saveName(event) {
     
   } 
 }
-
 
 
 function validatePlayerName(name) {
@@ -84,9 +83,9 @@ export function playAnonymously() {
 
 
 function hideFormShowInstructions() {
-  const formUser = document.getElementById("formUser")
+  const containerBannerImgAndForm = document.getElementById("containerBannerImgAndForm")
   const instructionsAndPlay = document.getElementById("instructionsAndPlay")
-  formUser.style.display = 'none';
+  containerBannerImgAndForm.style.display = 'none';
   instructionsAndPlay.style.display = 'block'
 }
 
