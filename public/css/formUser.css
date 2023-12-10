@@ -1,15 +1,27 @@
+#bannerImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#bannerImg img {
+  width: 20%;
+}
+
 #formUser{
   display: flex;
   justify-content: center;
   background-color: #f4f4f4;
   margin: auto;
   width: 90%;
-  margin-top: 1.5em;
+  margin-top: 1em;
+  border-radius: 0.4em;
 }
 
 #nameContainer h2{
   margin-top: 1em;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .form-group{
@@ -18,21 +30,22 @@
   gap: 1em;
   margin-bottom: 1.5em;
   text-align: center;
-  padding: 25px;
+  padding: 0 20px;
+  
 }
 
 .form-group label{
-  font-size: 1.15em;
+  font-size: 1.2em;
 }
 
 .player-name, .form-input{
-  border-radius: 4px;
+  border-radius: 0.6em;
   padding: 10px;
   border: 1px solid #ccc;
+  text-align: center;
 }
 
 .form-input{
-  text-align: center;
   color: gray;
 }
 
@@ -73,9 +86,4 @@
   #formUser {
     width: 60%;
   }
-}
-
-/* Estilos para dispositivos móviles */
-@media only screen and (max-width: 480px) {
-  
 }
