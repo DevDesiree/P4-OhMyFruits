@@ -14,20 +14,39 @@
     font-family: sans-serif;
     min-height: 80vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center; 
     flex-direction: column;
     background-color: #f9f7efff;
     user-select: none;
+    border:rgb(225, 255, 0) 1px solid;
 }
 
 #displayGame{
     background-image: url(../img/stageBkg.png);
     background-size: cover;
-    background-repeat: no-repeat
-    
+    background-repeat: no-repeat;
 }
 
+#counter{
+    position: relative;
+    max-height: 15em;
+    min-height: 10em;
+}
+
+#counterImage {
+    max-height: 15em;
+    min-height: 10em;
+    justify-content: end;
+}
+
+#total-Score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #fa0000; 
+}
 
 .infinite-carousel {
     margin: 2em 0;
@@ -104,6 +123,7 @@
       }
   }
  */
+
 
 
 .image-plank {
