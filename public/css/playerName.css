@@ -40,7 +40,7 @@
 .text-message,
 #message {
   color: #333;
-  background-color: #fff;
+  /*background-color: #fff;*/
   padding: 10px;
   border-radius: 4px;
   margin-top: 10px;
