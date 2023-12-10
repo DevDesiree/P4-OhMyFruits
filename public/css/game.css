@@ -23,7 +23,7 @@
 }
 
 #displayGame{
-    background-image: url(../img/stageBkg.png);
+    background-image: url(../img/stageBkg.png); 
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -40,12 +40,13 @@
     justify-content: end;
 }
 
-#total-Score {
+.text-Score {
     position: absolute;
     top: 50%;
     left: 50%;
     text-align: center;
-    color: #fa0000; 
+    color: #fa0000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 .infinite-carousel {
@@ -74,7 +75,7 @@
     gap: 5.5em;
     list-style: none;
     /* border: red solid 1px; */
-    cursor:url(../img/mouseTargetOff.png)64 64, auto; 
+    /* cursor:url(../img/mouseTargetOff.png)64 64, auto;  */
 }
 
 .infinite-carousel .moving-fruit {
@@ -99,7 +100,7 @@
     margin-left: 6.3em;
 }
 
- @keyframes move {
+@keyframes move {
     0% {
         transform: translateX(100%);
     }
@@ -134,7 +135,7 @@
 }
 
 
-@keyframes starSlideUp {
+ @keyframes starSlideUp {
     0% {
         opacity: 0.8;
     }
@@ -151,5 +152,5 @@
     }
 }
 
-
+ 
 
