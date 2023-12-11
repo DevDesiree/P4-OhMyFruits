@@ -2,9 +2,7 @@
 
 const imageContainer1 = document.getElementById('imageContainer1');
 
-
 // ARRAY Lista de imágenes o url
-
 const watermelon = './public/img/WatermelonHappyBig.png';
 const orange = './public/img/OrangeangryBig.png';
 const cherry = './public/img/CherryHappy.png';
@@ -24,7 +22,6 @@ const imageUrls = [watermelon, orange, cherry];
 // EASY dificultIndex = 1;
 // Normal dificultIndex = Math.floor(Math.random() * 2;
 // Hard dificultIndex = Math.floor(Math.random() *  imageUrls.length);
-
 
 
 function getRandomImageUrl() {
@@ -72,9 +69,8 @@ function showRandomImages() {
 }
 
 
-// ! sacar una variable de dificultad y muestre el tiempo 30000 30seg
-// normal 100000 easy 200000   Aunque yo le 
-// easy cambia tiempo y frutas y numero de imagenes
+//sacar una variable de dificultad y muestre el tiempo 30000 30seg
+// normal 100000 easy 200000  
 
 
 // Mostrar imágenes aleatorias inicialmente y luego actualizar cada x segundos
@@ -84,24 +80,21 @@ setInterval(() => {
     showRandomImages();
 }, 30000);
 
-    
-
 
 let totalScore = 0;
 const totalScoreElement = document.getElementById('totalScore');
 totalScoreElement.textContent = `${totalScore}`;
 
 
+
 //========================exito y fallo + audio
 
 const displayGame = document.getElementById('displayGame');
-
 
 displayGame.addEventListener('click', function (event) {
     const clickedElement = event.target;
     let gameSound= document.createElement("audio")
     let shootSound;
-
 
     if (clickedElement.classList.contains("image-fruit")) {
         //  console.log("exito");
@@ -113,20 +106,14 @@ displayGame.addEventListener('click', function (event) {
         totalScoreElement.textContent = `${totalScore}`;
         shootAudio = './public/sounds/failedSound.mp3';
     }
-    
-
-    gameSound.setAttribute("src", "./public/sounds/sucessSound.mp3")
+    gameSound.setAttribute("src", "../public/sounds/sucessSound.mp3")
     etiquetaAudio.play()
-   
 });
 
 //========================puntuaciones en las frutas y animaciones
 
 const shootSuccess = document.querySelectorAll(".moving-fruit");
 let fruitPointImage;
-// const fruta = document.querySelectorAll(".image-fruit");
-document.body
-// shootSuccess
 
 shootSuccess.forEach(function (shootDown) {
     shootDown.addEventListener("click", function (shootClick) {
@@ -169,22 +156,20 @@ shootSuccess.forEach(function (shootDown) {
         pointImage.style.top = clickY + "px";
         pointImage.style.opacity = "1";
         pointImage.style.width = "150px";
-      //  pointImage.style.animation = "starSlideUp 1s ease-in-out"; // 
+        pointImage.style.animation = "starSlideUp 1s ease-in-out"; // 
 
         // Agrega la nueva imagen al documento
         shootSuccess.appendChild(pointImage);
 
         //elimina la Imagen
-        // setTimeout(function () {
-        //     addEventListener
-        //      displayGame.removeChild(pointImage);
-        // }, 1100);
-
+        setTimeout(function () {
+            addEventListener
+            displayGame.removeChild(pointImage);
+        }, 1100);
     });
 });
 
 
-displayGame
 
 
 
