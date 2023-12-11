@@ -5,7 +5,7 @@
 <br>
 
 ##  🚀Deployment
- 🔗This project is deployed in : https://discord.com/channels/1179020757657993216/1179020757657993219/1183872249720213505
+ 🔗This project is deployed in : [GitHub Pages](https://devdesiree.github.io/P4-OhMyFruits/)
  
 # 🗂️Index
 ### 1. Discription
