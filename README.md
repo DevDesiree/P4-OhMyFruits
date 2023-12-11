@@ -5,7 +5,8 @@
 <br>
 
 ##  🚀Deployment
- 🔗This project is deployed in :
+ 🔗This project is deployed in : https://discord.com/channels/1179020757657993216/1179020757657993219/1183872249720213505
+ 
 # 🗂️Index
 ### 1. Discription
 ### 2.Screenshots
@@ -31,7 +32,7 @@ Casey's Carnival Fruit Shoot features three difficulty levels - Easy, Normal, an
 # 💻Technologies used:
 ## 🛠️ Skills
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,git,github,figma)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,git,github,figma,bootstrap)](https://skillicons.dev)
 ## 🖌️ Color Reference
 
 | Color             | Hex                                                                |
