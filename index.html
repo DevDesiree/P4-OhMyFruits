@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OhMyFruits</title>
-    <!-- ColocarFavicon -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,18 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
-
 <body>
     <header>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <div class="container-fluid d-flex">
-                <a class="navbar-brand" href="#"><img src="./public/img/logo-Navbar.png" alt="Logo Navbar"></a>
+                <a class="navbar-brand" href="./index.html" id="logoLink"><img src="./public/img/logo-Navbar.png"
+                        alt="Logo Navbar"></a>
                 <div class="text-white fa-solid fa-volume-high" id="iconSound"></div>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarNav">
                     <ul class="navbar-nav">
@@ -40,30 +38,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Gra da Memoria</a>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
     <main>
-
-        <section id="containerBannerImgAndForm">
-          <section id="gameTitle" class="game-title">
-            <h1>🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
-          </section>
+        
+        <section id="containerBannerImgAndForm" style="display: none;">
+          <h1 class="game-title">🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
             <div id="bannerImg">
                 <img src="./public/img/WatermelonHappyBig.png" alt="">
             </div>
-            <!-- Formulario de Usuario -->
             <section id="formUser">
                 <div id="nameContainer">
                     <h2>Choose your Username and Level difficulty</h2>
                     <form id="playerForm">
                         <div class="form-group">
                             <label for="playerName">Name:</label>
+
                             <input type="text" id="playerName" class="player-name" name="playerName" required placeholder="Insert your username">
+                            <small>Requires a name of 5 to 10 characters, with 1 capital letter and a number. </small>
 
                             <label for="difficulty">Select Difficulty:</label>
                             <select id="difficulty" class="form-input" required>
@@ -79,7 +74,6 @@
                                 Anonymously</button>
                         </div>
                         <div id="message"></div>
-
                     </form>
                 </div>
             </section>
@@ -112,85 +106,90 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="buttons-game">
-                    <!-- Aqui irán los botones de Play y How to Play -->
                     <button type="button" id="startButton" class="start-button btn-style">START GAME</button>
-                    <button type="button" id="howToPlayButton" class="how-to-play-button btn-style">HOW TO PLAY</button>
+                    <button type="button" id="howToPlayButton" class="how-to-play-button btn-style">HOW TO
+                        PLAY</button>
                 </div>
             </div>
-
         </section>
-
-        <!-- Juego -->
         <section>
-
-            <div id="gameContainer" style="display: none;">
-                <div id="contentGame">
-
-                    <div id="displayGame">
-
-                        <!-- Aqui irá el display del juego -->
-
-
-                        <div class="infinite-carousel">
-
-                            <div class="image-container" id="imageContainer1"></div>
-                            <div><img class="image-plank" src="./public/img/plank.png"></div>
+            <div id="contentGame">
+                <div id="displayGame">
+                    <!-- Aqui irá el display del juego -->
+                    <div id="counter">
+                        <p class="text-score">Total score</p>
+                        <p id="totalScore" class="text-score"></p>
+                    </div>
+                    <div class="infinite-carousel">
+                        <div class="image-container" id="imageContainer1"></div>
+                        <div>
+                            <img class="image-plank" src="./public/img/plank.png" />
                         </div>
-
+                    </div>
+                </div>
+        </section>
+          
+        <section id="gameOverScreen">
+            <div class="game-over">
+                <h2>Game Over</h2>
+                <div class="center-container">
+                    <div id="rankingTableContainer">
+                        <table id="rankingTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Difficulty</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td id="nameTd">a</td>
+                                <td id="difficultyTd">b</td>
+                                <td id="scoreTd">c</td>
+                                <!-- Las filas de datos se agregarán aquí dinámicamente con JavaScript -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-           
         </section>
 
         <!-- boton restart -->
         <button type="button" id="restartButton" class="restart-button" style="display: none;">RESTART
             GAME</button>
 
-
-        <!-- Contador -->
-        <section>
-            <div id="countdownSection " style="display: none;">
-                <div id="countdown">
-                    <button class="difficulty-button" onclick="changeDifficulty('easy')" id="easyButton">Easy</button>
-                    <button class="difficulty-button" onclick="changeDifficulty('normal')"
-                        id="normalButton">Normal</button>
-                    <button class="difficulty-button" onclick="changeDifficulty('hard')" id="hardButton">Hard</button>
-                </div>
-                <div class="game-over">
-                    <img src="./public/img/gameOverDisplay_2.jpeg" alt="gameOverImage" class="game-over-image">
-                </div>    
-            </div>
-        </section>
-
     </main>
 
-
+  
     <!-- Footer -->
+
     <footer>
         <ul class="contact-icons">
-            <li><i class="fa-regular fa-envelope fa-2xl"></i></li>
-            <li><i class="fa-brands fa-facebook fa-2xl"></i></li>
-            <li><i class="fa-brands fa-instagram fa-2xl"></i></li>
-            <li><i class="fa-brands fa-google-play fa-2xl"></i></li>
+            <li><a href="https://factoriaf5.org/"><i class="fa-regular fa-envelope fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/"><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/"><i class="fa-brands fa-google-play fa-2xl"></i></a></li>
         </ul>
-
-            <p><br>Copyright <i class="fa-regular fa-copyright"></i>Carnival DOM 2023</p>
+       
+        <p><br>Copyright <i class="fa-regular fa-copyright"></i>Carnival DOM 2023</p>
+        
     </footer>
+
+
+
     <script type="module" src="./public/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="./public/js/game.js"></script>
+
     <!-- <script type="module" src="./public/js/startStorage.js"></script>
     <script type="module" src="./public/js/playerName.js"></script>
     <script type="module" src="./public/js/startButton.js"></script>
-    <script type="module" src="./public/js/game.js"></script>
     <script src="./public/js/countdown.js"></script>
-    <script src="./public/js/deficulltysounds.js"></script> -->
-    <script type="module" src="./public/js/startButton.js"></script>
-    <script type="module" src="./public/js/sounds.js"></script>
+    <script src="./public/js/deficulltysounds.js"></script>
+    <script type="module" src="./public/js/sounds.js"></script> -->
+      
 </body>
-
 </html>

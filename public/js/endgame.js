@@ -1,10 +1,24 @@
-// Funcion sacada de PlayerName por que no se usa aun
-// Se guarda por si mas adelante se usara o lo que sea.
+// Funcionalidad para final de juego.
 
-window.endGame = function (score) {
-  const playerName = playerNameInput.value.trim();
-  if (playerName && !validatePlayerName(playerName) && localStorage.getItem(playerName)) {
-    localStorage.setItem(playerName, score);
-    scoreDiv.textContent = 'Total Score: ' + score;
-  }
-};
+function showHideEndGame (){
+  const gameOverScreen = document.getElementById("gameOverScreen")
+  const contentGame = document.getElementById("contentGame")
+  contentGame.style.display = "none"
+  gameOverScreen.style.display = "block"
+
+}
+
+function showUserDataRanking() {
+  const nameTd = document.getElementById('nameTd')
+  const difficultyTd = document.getElementById('difficultyTd')
+  const scoreTd = document.getElementById("scoreTd")
+
+  nameTd.innerText = localStorage.getItem("Username")
+  difficultyTd.innerText = localStorage.getItem("Difficulty")
+  scoreTd.innerText = localStorage.getItem("Score")
+}
+
+export function showEndGame(){
+  showHideEndGame()
+  showUserDataRanking()
+}
