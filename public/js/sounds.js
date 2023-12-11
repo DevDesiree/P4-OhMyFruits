@@ -1,29 +1,54 @@
-//Funcion para reproducir 
+
 const iconSound = document.getElementById("iconSound");
 const audioInstances = {};
+let currentAudio;  
 
-// Se pasa como parámetro el enlace y se crea una instancia de la clase Audio
+iconSound.addEventListener("click", () => {
+    togglePlay("./public/sounds/backgroundSound.mp3")
+});
+
+
 function loadAudio(source) {
     const audio = new Audio(source);
     audio.preload = "auto";
     return audio;
 }
 
-// Con la función loadAudio se reproduce si no hay ningún sonido sonando.
+
 export function togglePlay(source) {
     if (!audioInstances[source]) {
         audioInstances[source] = loadAudio(source);
     }
 
-    const currentAudio = audioInstances[source];
+    currentAudio = audioInstances[source];  
 
     if (currentAudio.paused) {
         currentAudio.play();
+        iconSound.classList.remove("fa-volume-high");
+        iconSound.classList.add("fa-volume-xmark");
+
     } else {
         currentAudio.pause();
+        iconSound.classList.remove("fa-volume-xmark");
+        iconSound.classList.add("fa-volume-high");
     }
 }
 
+// Función para mutear/desmutear
+export function toggleMute(source) {
+    if (!audioInstances[source]) {
+        audioInstances[source] = loadAudio(source);
+    }
+
+    currentAudio = audioInstances[source]; 
+    currentAudio.muted = !currentAudio.muted;
 
 
-
+    if (currentAudio.muted) {
+        iconSound.classList.remove("fa-volume-high");
+        iconSound.classList.add("fa-volume-mute");
+    } else {
+        iconSound.classList.remove("fa-volume-mute");
+        iconSound.classList.add("fa-volume-high");
+    }
+}

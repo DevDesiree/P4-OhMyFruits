@@ -35,12 +35,10 @@ export function showEndGame(){
   showUserDataRanking()
 }
 
+// Restar Game
 export function restartGame(){
   const gameOverScreen = document.getElementById("gameOverScreen")
-  const contentGame = document.getElementById("contentGame")
   gameOverScreen.style.display = "none"
-  contentGame.style.display = "block"
-  togglePlay("./public/sounds/successSound.mp3")
-  launchGame()
+  location.reload(true);
 
 }

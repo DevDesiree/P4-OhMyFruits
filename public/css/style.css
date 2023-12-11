@@ -8,8 +8,6 @@
 */
 /*  */
 
-
-/* Styles Navbar */
 @import url(./body.css);
 @import url(./navbar.css);
 @import url(./gameTitle.css);
@@ -27,9 +25,5 @@
 @import url(./footer.css);
 
 
-/*
-
-@import url(./restart.css);
- */
 
 
