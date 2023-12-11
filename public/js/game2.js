@@ -55,6 +55,7 @@ function getRandomImageUrl() {
 function showRandomImages() {
     console.log('Showing random images...');
     imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
+    actualizar()
     togglePlay("./public/sounds/kim-lightyear-leave-the-world-tonight-chiptune-edit-loop-132102.mp3")
 
     let [numberImagesDifficulty, timer] = getDifficultyUser();
@@ -105,7 +106,7 @@ function hitFailCountAndSounds() {
 
         // Asegúrate de que solo estás tratando clics en elementos específicos dentro de displayGame
         if (clickedElement.classList.contains("image-fruit")) {
-            togglePlay('./public/sounds/sucessSound.mp3');
+            togglePlay('./public/sounds/dificultyButtons.mp3');
         } else {
             totalScore -= 1;
             actualizar()
