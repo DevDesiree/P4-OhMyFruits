@@ -45,7 +45,7 @@
     </header>
     <main>
         
-        <section id="containerBannerImgAndForm">
+        <section id="containerBannerImgAndForm" style="display: none;">
           <h1 class="game-title">🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
             <div id="bannerImg">
                 <img src="./public/img/WatermelonHappyBig.png" alt="">
@@ -130,11 +130,30 @@
                 </div>
         </section>
           
-          
-         <!-- display game end -->
-        <div class="game-over">
-            <img src="./public/img/gameOverDisplay_2.jpeg" alt="gameOverImage" class="game-over-image">
-        </div>
+        <section id="gameOverScreen">
+            <div class="game-over">
+                <h2>Game Over</h2>
+                <div class="center-container">
+                    <div id="rankingTableContainer">
+                        <table id="rankingTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Difficulty</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td id="nameTd">a</td>
+                                <td id="difficultyTd">b</td>
+                                <td id="scoreTd">c</td>
+                                <!-- Las filas de datos se agregarán aquí dinámicamente con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- boton restart -->
         <button type="button" id="restartButton" class="restart-button" style="display: none;">RESTART
