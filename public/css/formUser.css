@@ -5,7 +5,7 @@
 }
 
 #bannerImg img {
-  width: 20%;
+  width: 5rem;
 }
 
 #formUser{
@@ -63,28 +63,27 @@
 
 }
 
-
-/* .text-message,
-#message {
-  color: #333;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 4px;
-  margin-top: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
-
-
-/* Estilos para pantallas de escritorio */
-@media only screen and (min-width: 1024px) {
-  #formUser {
-    width: 40%;
+@media (min-width: 768px) {
+  #bannerImg img {
+    width: 7rem;
   }
+
+  .save-name-button:hover,
+.anonymously-button:hover {
+  background-color: #52d270;
+  border-color: #f4f4f4;
+
+}
 }
 
-/* Estilos para tabletas */
-@media only screen and (min-width: 481px) and (max-width: 1023px) {
-  #formUser {
-    width: 60%;
+@media (min-width: 1200px) {
+  #bannerImg img {
+    width: 9rem;
   }
+
+  .save-name-button:hover,
+.anonymously-button:hover {
+  background-color: orange;
+  border-color: #f4f4f4;
+}
 }

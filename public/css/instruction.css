@@ -14,8 +14,6 @@
     max-width: 80%;
     margin: auto;
     padding: 3px;
-    /* display: none; */
-
 }
 
 .instructions {
@@ -25,8 +23,8 @@
 
 .img-casey {
     margin: auto;
-    height: 16rem;
-    width: 16rem;
+    height: 15rem;
+    width: 15rem;
 }
 
 
@@ -44,44 +42,26 @@
     gap: 20px;
 }
 
-/* @media (min-width: 768px) {
-
-    .instructions {
-        font-size: 25px;
-    }
-    .casey-the-archer {
-        height: 350px;
-        width: 350px;
-        border-radius: 10%;
-    }
-} */
-
-
-/* Estilos para pantallas de escritorio */
-@media only screen and (min-width: 1024px) {}
-
-/* Estilos para tabletas */
-@media only screen and (min-width: 481px) and (max-width: 1023px) {}
-
-/* Estilos para dispositivos móviles */
-
-
-/* @media only screen and (max-width: 480px) {
+@media (min-width: 768px) {
     #modalInstructions {
-        display: flex;
-        flex-direction: column;
-        font-family: VT323;
-        font-size: 25px;
-        background-color: #F6DE84;
-        gap: 10px;
+        font-size: 18px;
+    }
+    
+    .img-casey {
         margin: auto;
-        padding: 3px;
-       
-    
+        height: 19rem;
+        width: 19rem;
     }
-
-    .buttons-game {
-        height: 300px;
+  }
+  
+  @media (min-width: 1200px) {
+    #modalInstructions {
+        font-size: 22px;
     }
     
-} */
+    .img-casey {
+        margin: auto;
+        height: 20rem;
+        width: 20rem;
+    }
+  }

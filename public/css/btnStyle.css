@@ -3,7 +3,7 @@
   font-family: VT323;
   width: 8em;
   height: 3em;
-  font-size: 1.25rem;
+  font-size: 1 rem;
   border-radius: 50px;
   background-color: #FF4B65;
   color: white;
@@ -42,11 +42,57 @@ button:hover {
   }
 }
 
-/*
 @media (min-width: 768px) {
-  .start-button {
-    padding: 15px 30px;
-    width: initial;
-    text-align: center;
+  .btn-style {
+    width: 8em;
+    height: 3em;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    background-color:#267906;
   }
-} */
+  
+  button:hover {
+    background-image: linear-gradient(145deg,
+        transparent 10%,
+        #25c522 10% 20%,
+        transparent 20% 30%,
+        #49c93b 30% 40%,
+        transparent 40% 50%,
+        #4bde4d 50% 60%,
+        transparent 60% 70%,
+        #42bf74 70% 80%,
+        transparent 80% 90%,
+        #35c122 90% 100%);
+    animation: background 8s linear infinite;
+    background-color: #8be1a3;
+    border-color: #7ce976;
+  
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-style {
+    width: 8em;
+    height: 3em;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    background-color:#f0821a;
+
+  button:hover {
+    background-image: linear-gradient(145deg,
+        transparent 10%,
+        #e18d17 10% 20%,
+        transparent 20% 30%,
+        #ee6f0e 30% 40%,
+        transparent 40% 50%,
+        #fbc85a 50% 60%,
+        transparent 60% 70%,
+        #ffc013 70% 80%,
+        transparent 80% 90%,
+        #ff8818 90% 100%);
+    animation: background 8s linear infinite;
+    background-color: #dcb829;
+    border-color: #e99776;
+  }
+}
+}

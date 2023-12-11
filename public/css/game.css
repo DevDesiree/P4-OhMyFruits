@@ -1,13 +1,4 @@
 
-/* 
- CSS HEX 
---yellow-green: #77cc0aff;
---peach: #f3c89fff;
---rose-red: #c20b50ff;
---floral-white: #f9f7efff;
---russian-violet: #2c1c51ff;
-*/
-
 #contentGame{
     display: none;
 }
@@ -145,13 +136,4 @@
         opacity: 0;
     }
 }
-
-
-
-/* Estilos para pantallas de escritorio */
-@media only screen and (min-width: 1024px) {}
-
-/* Estilos para tabletas */
-@media only screen and (min-width: 481px) and (max-width: 1023px) {}
-
 
