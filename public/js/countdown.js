@@ -1,25 +1,14 @@
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', function () {
-    const move pints u = {
-        easy: 120,
-        normal: 60,
-        hard: 30
-    };
-=======
->>>>>>> e50bfb73843fd4798f310124be517d113f86483d
 
-const times = {
-    easy: 120,
-    normal: 60,
-    hard: 30
-};
+
+import { showEndGame } from "./endgame.js";
 
 let countdown;
 let currentTime;
 
-function startGame(difficulty) {
-    currentTime = times[difficulty];
+export function startGame(timer) {
+    currentTime = timer / 1000
     displayTime();
+    console.log("timer" + currentTime);
 
     countdown = setInterval(function () {
         currentTime--;
@@ -28,6 +17,11 @@ function startGame(difficulty) {
         if (currentTime <= 0) {
             clearInterval(countdown);
             gameOver();
+
+            setInterval(() => {
+                showEndGame();
+            }, 1000);
+
         } else if (currentTime <= 10) {
             toggleBlinking();
         }
@@ -52,14 +46,4 @@ function gameOver() {
     document.getElementById('restartButton').style.display = 'block';
 }
 
-window.changeDifficulty = function (difficulty) {
-    clearInterval(countdown);
-    startGame(difficulty);
-};
 
-function initializeCountdown(difficulty) {
-    startGame(difficulty);
-}
-
-
-window.initializeCountdown = initializeCountdown;

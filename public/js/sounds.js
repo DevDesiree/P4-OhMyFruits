@@ -1,31 +1,29 @@
 //Funcion para reproducir 
+const iconSound = document.getElementById("iconSound");
+const audioInstances = {};
 
-const iconSound = document.getElementById("iconSound")
-
-var audio;
-
+// Se pasa como parámetro el enlace y se crea una instancia de la clase Audio
 function loadAudio(source) {
-    audio = new Audio(source);
+    const audio = new Audio(source);
     audio.preload = "auto";
+    return audio;
 }
 
+// Con la función loadAudio se reproduce si no hay ningún sonido sonando.
 export function togglePlay(source) {
-    if (!audio) {
-        loadAudio(source);
+    if (!audioInstances[source]) {
+        audioInstances[source] = loadAudio(source);
     }
 
-    if (audio.paused) {
-        audio.play();
-        
+    const currentAudio = audioInstances[source];
+
+    if (currentAudio.paused) {
+        currentAudio.play();
     } else {
-        audio.pause();
-        
+        currentAudio.pause();
     }
 }
 
 
-iconSound.addEventListener("click", () => {
-    togglePlay("./public/sounds/mixkit-medieval-show-fanfare-announcement-226.mp3")
-})
 
-saveName.addEventListener("click", togglePlay)
+

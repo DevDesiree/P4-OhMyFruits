@@ -1,0 +1,37 @@
+#gameOverScreen {
+    /* Añadido un contenedor adicional para centrar la tabla */
+    background-image: url("../img/gameOverDisplay_2.jpeg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: none;
+}
+
+.game-over {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#rankingTableContainer {
+    margin-top: 20px;
+}
+
+#rankingTable {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #96D900;
+    color: black;
+}
+
+#rankingTable th,
+#rankingTable td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#rankingTable th {
+    background-color: #817676;
+}
