@@ -1,0 +1,9 @@
+#countdown {
+    top: 60px;
+    right: 20px;
+    background-color: rgb(143, 143, 143);
+    border: 2px solid #77cc0aff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 24px;
+}

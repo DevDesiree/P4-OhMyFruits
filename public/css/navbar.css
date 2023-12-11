@@ -1,0 +1,50 @@
+.navbar {
+    background-color: #9C0000 !important;
+}
+
+.navbar-brand>img {
+    width: 60px;
+}
+
+#iconSound{
+    display: none;
+}
+
+.fa-solid {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.fa-solid:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+.nav-item {
+    padding-right: 4em;
+}
+
+ul {
+    margin: auto;
+}
+
+a:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+
+
+@media (max-width: 991px) {
+
+    .fa-solid {
+        margin-right: 0;
+    }
+
+    .nav-item {
+        padding-right: 0;
+        margin-bottom: 20px;
+
+    }
+
+}

@@ -1,0 +1,67 @@
+#instructionsAndPlay {
+    display: none;
+    margin-top: 2em;
+}
+
+#modalInstructions {
+    display: none;
+    font-family: VT323;
+    font-size: 16px;
+    background-color: #F6DE84;
+    gap: 10px;
+    max-width: 80%;
+    margin: auto;
+    padding: 3px;
+}
+
+.instructions {
+    width: 80% !important;
+
+}
+
+.img-casey {
+    margin: auto;
+    height: 15rem;
+    width: 15rem;
+}
+
+
+.img-casey img {
+    width: 100%;
+
+}
+
+.buttons-game {
+    height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+
+    #modalInstructions {
+        font-size: 18px;
+        
+    }
+
+    .img-casey {
+        margin: auto;
+        height: 19rem;
+        width: 19rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    #modalInstructions {
+        font-size: 22px;
+    }
+
+    .img-casey {
+        margin: auto;
+        height: 20rem;
+        width: 20rem;
+    }
+}

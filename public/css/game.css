@@ -1,0 +1,139 @@
+
+#contentGame{
+    display: none;
+}
+
+#displayGame {
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    flex-direction: column;
+    background-color: #f9f7efff;
+    user-select: none;
+}
+
+#displayGame {
+    background-image: url(../img/stageBkg.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#counter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    width: 10em;
+    background-color: #f6a9d2;
+    background-image: linear-gradient(45deg, #FFDDEF 25%, transparent 25.5%, transparent 50%, #FFDDEF 50.5%, #FFDDEF 75%, transparent 75.5%, transparent);
+    background-size: 1.25em 1.25em;
+    border-radius: 6%;
+    box-shadow: 0 0 2em rgb(255, 251, 0); 
+    box-shadow:inset -0.5em -0.5em rgba(249, 145, 145, 0.2), inset 0.5em 0.5em rgba(209, 109, 109, 0.2);
+}
+
+.text-score {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #9C0000;
+    font-size: 1.5em;
+    font-family: VT323;
+    text-shadow: 0 0 3.5em #fff;
+}
+
+#totalScore {
+    font-size: 3em;
+}
+
+
+.infinite-carousel {
+    margin: 2em 0;
+    width: 90%;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg,
+            transparent,
+            #fff 30%,
+            #fff 80%,
+            transparent);
+    mask: linear-gradient(90deg,
+            transparent,
+            #fff 30%,
+            #fff 80%,
+            transparent);
+}
+
+.image-container {
+    width: max-content;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    gap: 5.5em;
+    list-style: none;
+    cursor:url(../img/mouseTargetOff.png)64 64, auto;  
+
+}
+
+.infinite-carousel .moving-fruit {
+    max-width: 20em;
+}
+
+
+.moving-fruit {
+    max-width: 3em;
+    max-height: 9.5em;
+    padding-left: 2em;  
+}
+
+.image-fruit:hover {
+    filter: brightness(2.75);
+    cursor:url(../img/mouseTargetOn.png) 64 64, auto; 
+}
+
+.cherry{
+    margin-left: 6.3em;
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-15000px);
+    }
+  
+
+}  
+
+.image-plank {
+    width: 100%;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes starSlideUp {
+    0% {
+        opacity: 0.8;
+    }
+
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800%);
+        opacity: 0;
+    }
+}
+

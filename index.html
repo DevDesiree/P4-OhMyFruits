@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhMyFruits</title>
+    <link rel="icon" type="image/x-icon" href="./public/img/logo-Navbar.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+    <header>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container-fluid d-flex">
+                <a class="navbar-brand" href="./index.html"><img src="./public/img/logo-Navbar.png"
+                        alt="Logo Navbar"></a>
+                <div class="text-white fa-solid fa-volume-high" id="iconSound"></div>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Trileras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Memory Masters</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Las Pitonisas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Gra da Memoria</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section id="containerBannerImgAndForm">
+            <h1 class="game-title">🍒🍊🍉OOHH, MY FRUITS!🍒🍊🍉</h1>
+            <div id="bannerImg">
+                <img src="./public/img/WatermelonHappyBig.png" alt="">
+            </div>
+            <section id="formUser">
+                <div id="nameContainer">
+                    <h2>Choose your Username and Level difficulty</h2>
+                    <form id="playerForm">
+                        <div class="form-group">
+                            <label for="playerName">Name:</label>
+
+                            <input type="text" id="playerName" class="player-name" name="playerName" required
+                                placeholder="Insert your username">
+                            <small>Requires a name of 5 to 10 characters, with 1 capital letter and a number. </small>
+
+                            <label for="difficulty">Select Difficulty:</label>
+                            <select id="difficulty" class="form-input" required>
+                                <option value="" disabled selected>Select difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="normal">Normal</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="saveName" class="save-name-button btn-style">SAVE</button>
+                            <button type="button" id="playAnonymously" class="anonymously-button btn-style">Play
+                                Anonymously</button>
+                        </div>
+                        <div id="message"></div>
+                    </form>
+                </div>
+            </section>
+        </section>
+        <section id="instructionsAndPlay">
+            <div class="content-instructions-play">
+                <div class="content-instructions">
+                    <div id="modalInstructions">
+                        <div class="img-casey">
+                            <img src="./public/img/CaseyTheArcher.jpg" alt="Casey The Archer">
+                        </div>
+                        <div class="instructions">
+                            <p><br>Help Casey Knock down the Fruits🍒🍊🍉
+                                <br><strong>Each fruit has a different point value:<br></strong>
+                                - **Cherries**: 5 points<br>
+                                - **Oranges**: 3 points<br>
+                                - **Watermelons**: 1 point<br>
+                                <strong>Level Duration</strong>
+                                <br>
+                                The time allotted depends on the difficulty level you choose:
+                                <br>
+                                - Difficult**: 30 seconds<br>
+                                - Normal**: 1 minute<br>
+                                - Easy**: 2 minutes<br>
+                                <strong>How to Play:</strong><br>
+                                - Try to get the highest score possible before the time runs out!<br>
+                                Good luck and have fun helping Casey knock down the fruits! 😊
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-game">
+                    <button type="button" id="startButton" class="start-button btn-style">START GAME</button>
+                    <button type="button" id="howToPlayButton" class="how-to-play-button btn-style">HOW TO
+                        PLAY</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="contentGame">
+                <div id="displayGame">
+                    <div id="counter">
+                        <p id="countdown"></p>
+                        <p class="text-score">Total score</p>
+                        <p id="totalScore" class="text-score"></p>
+                    </div>
+                    <div class="infinite-carousel">
+                        <div class="image-container" id="imageContainer1"></div>
+                        <div>
+                            <img class="image-plank" src="./public/img/plank.png" />
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="gameOverScreen">
+            <div class="game-over">
+                <div class="center-container">
+                    <div id="rankingTableContainer">
+                        <table id="rankingTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Difficulty</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td id="nameTd">a</td>
+                                <td id="difficultyTd">b</td>
+                                <td id="scoreTd">c</td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button type="button" id="restartButton" class="btn-style">RESTART
+                    GAME</button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <ul class="contact-icons">
+            <li><a href="https://factoriaf5.org/" target="_blank"><i class="fa-regular fa-envelope fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/" target="_blank"><i class="fa-brands fa-facebook fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
+            <li><a href="https://factoriaf5.org/" target="_blank"><i class="fa-brands fa-google-play fa-2xl"></i></a>
+            </li>
+        </ul>
+        <p><br>Copyright <i class="fa-regular fa-copyright"></i>Carnival DOM 2023</p>
+    </footer>
+
+    <script type="module" src="./public/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
