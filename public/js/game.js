@@ -1,4 +1,5 @@
-
+import { startGame } from "./countdown.js";
+import { togglePlay } from "./sounds.js";
 
 const imageContainer1 = document.getElementById('imageContainer1');
 
@@ -9,45 +10,67 @@ const cherry = './public/img/CherryHappy.png';
 
 const imageUrls = [watermelon, orange, cherry];
 
-// Función aleatorio, para obtener imagen del array aleatorio
-
-// si necesitamos un easy u unhard, esto estaria fuera o  randomidex se calculafuera
-// cambiaria la pcnstante randomIndex por dificultIndex   -> 
-
-//modifica el nª de imagenes
-// EASY dificultIndex = 1;
-// Normal dificultIndex = Math.floor(Math.random() * 2;
-// Hard dificultIndex = Math.floor(Math.random() *  imageUrls.length);
-
-// EASY dificultIndex = 1;
-// Normal dificultIndex = Math.floor(Math.random() * 2;
-// Hard dificultIndex = Math.floor(Math.random() *  imageUrls.length);
+let numImagen;
+let timer;
+let totalScore = 0;
 
 
+// Depende de dificultad elegida por usuario , se establece unos segundos y numero de imagenes.
+function getDifficultyUser() {
+    let difficultyUser = localStorage.getItem("Difficulty")
+    console.log("Dificultad elegida por usuario : " + difficultyUser);
+
+    if (difficultyUser == "easy") {
+        numImagen = 300
+        timer = 120000;
+        
+
+    } else if (difficultyUser == "normal") {
+        numImagen = 500
+        timer = 60000;
+        
+
+    } else if (difficultyUser == "hard") {
+        numImagen = 700
+        timer = 30000;
+        
+
+    } else {
+        numImagen = 300
+        timer = 120000;
+        
+    }
+
+    return [numImagen, timer];
+
+}
+
+// Se escogen aleatoriamente las imagenes.
 function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
 }
 
-//! añadir constante de numImges para el numero de imagnees segun dificultad
-//! añadir contante de 
-
-// Función para crear y mostrar imágenes aleatorias
-export function showRandomImages() {
+// Se muestran aleatoriamente las imagenes.
+function showRandomImages() {
     console.log('Showing random images...');
     imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
+    actualizar()
+    togglePlay("./public/sounds/backgroundSound.mp3")
 
-    const numImages = 300;  //número de imágenes mostradas💢
+    let [numberImagesDifficulty, timer] = getDifficultyUser();
+    console.log(numberImagesDifficulty);
+    console.log(timer);
 
     // Clonar las imágenes existentes para hacer la secuencia infinita
-    const existingImages = imageContainer1.querySelectorAll('.image-fruit');  
+    const existingImages = imageContainer1.querySelectorAll('.image-fruit');
     existingImages.forEach((existingImage) => {
         const clone = existingImage.cloneNode(true);
         imageContainer1.appendChild(clone);
     });
 
     // Agregar nuevas imágenes
-    for (let i = 0; i < numImages; i++) {
+    for (let i = 0; i < numberImagesDifficulty; i++) {
         const imageUrl = getRandomImageUrl();
         const imageElement = document.createElement('img');
         imageElement.src = imageUrl;
@@ -68,111 +91,99 @@ export function showRandomImages() {
 
         //💢si hay dificultades, cambiar los 30seguntos
     }
+
+    setInterval(() => {
+        showRandomImages();
+    }, timer);
+}
+
+function hitFailCountAndSounds() {
+    const displayGame = document.getElementById('displayGame');
+    const totalScoreElement = document.getElementById('totalScore');
+
+    displayGame.addEventListener('click', function (event) {
+        const clickedElement = event.target;
+
+        // Asegúrate de que solo estás tratando clics en elementos específicos dentro de displayGame
+        if (clickedElement.classList.contains("image-fruit")) {
+            togglePlay('./public/sounds/hitSound.mp3');
+        } else {
+            totalScore -= 1;
+            actualizar()
+            totalScoreElement.textContent = `${totalScore}`;
+            togglePlay('./public/sounds/failedSound.mp3');
+        }
+    });
+
+    // Obtén los elementos más recientes con la clase moving-fruit
+    const shootSuccess = document.querySelectorAll(".moving-fruit");
+
+    shootSuccess.forEach(function (shootDown) {
+        shootDown.addEventListener("click", function (shootClick) {
+            const clickX = shootClick.clientX;
+            const clickY = shootClick.clientY;
+            this.style.opacity = "0";
+
+            const pointImage = document.createElement("img");
+            let fruitPointImage;
+
+            if (shootDown.classList.contains("watermelon")) {
+                totalScore += 2;
+                actualizar()
+                totalScoreElement.textContent = `${totalScore}`;
+                fruitPointImage = './public/img/WatermelonHappyBig.png';
+                // Elimina el elemento clicado después de agregar el nuevo elemento
+                displayGame.removeChild(shootDown);
+            } else if (shootDown.classList.contains("cherry")) {
+                totalScore += 6;
+                actualizar()
+                totalScoreElement.textContent = `${totalScore}`;
+                fruitPointImage = './public/img/CherryHappy.png';
+                displayGame.removeChild(shootDown);
+            } else if (shootDown.classList.contains("orange")) {
+                totalScore += 4;
+                actualizar()
+                totalScoreElement.textContent = `${totalScore}`;
+                fruitPointImage = './public/img/OrangeangryBig.png';
+                displayGame.removeChild(shootDown);
+            }
+
+            totalScoreElement.textContent = `${totalScore}`;
+        
+
+            // Configura la nueva imagen
+            pointImage.src = fruitPointImage;
+            pointImage.style.position = "absolute";
+            pointImage.style.left = clickX + "px";
+            pointImage.style.top = clickY + "px";
+            pointImage.style.opacity = "1";
+            pointImage.style.width = "150px";
+            pointImage.style.animation = "starSlideUp 1s ease-in-out";
+
+            // Agrega el evento clic al nuevo elemento
+            pointImage.addEventListener("click", function () {
+                // Cualquier acción que desees realizar en clic de la nueva imagen
+            });
+
+            // Agrega la nueva imagen al documento
+            displayGame.appendChild(pointImage);
+
+            // Elimina la imagen después de 1100 ms
+            setTimeout(function () {
+                displayGame.removeChild(pointImage);
+            }, 1100);
+        });
+    });
+    
+}
+
+function actualizar(){
+    localStorage.setItem("totalScore", totalScore)
 }
 
 
-//sacar una variable de dificultad y muestre el tiempo 30000 30seg
-// normal 100000 easy 200000  
-
-
-// Mostrar imágenes aleatorias inicialmente y luego actualizar cada x segundos
-
-showRandomImages();
-setInterval(() => {
-    showRandomImages();
-}, 30000);
-
-
-let totalScore = 0;
-const totalScoreElement = document.getElementById('totalScore');
-totalScoreElement.textContent = `${totalScore}`;
-
-
-
-//========================exito y fallo + audio
-
-const displayGame = document.getElementById('displayGame');
-
-displayGame.addEventListener('click', function (event) {
-    const clickedElement = event.target;
-    let gameSound= document.createElement("audio")
-    let shootSound;
-
-    if (clickedElement.classList.contains("image-fruit")) {
-        //  console.log("exito");
-         shootAudio = './public/sounds/sucessSound.mp3';
-
-    } else {
-        totalScore -= 1
-        // console.log(`Fallo -1! ${totalScore}`);
-        totalScoreElement.textContent = `${totalScore}`;
-        shootAudio = './public/sounds/failedSound.mp3';
-    }
-    gameSound.setAttribute("src", "../public/sounds/sucessSound.mp3")
-    etiquetaAudio.play()
-});
-
-//========================puntuaciones en las frutas y animaciones
-
-const shootSuccess = document.querySelectorAll(".moving-fruit");
-let fruitPointImage;
-
-shootSuccess.forEach(function (shootDown) {
-    shootDown.addEventListener("click", function (shootClick) {
-        const clickX = shootClick.clientX;
-        const clickY = shootClick.clientY;
-        this.style.opacity = "0";
-
-        if (shootDown.classList.contains("watermelon")) {
-            totalScore += 2
-            //console.log(`Es una sandía (watermelon)! ${totalScore}`);
-            shootDown.classList.remove("image-fruit");
-            shootDown.classList.remove("watermelon");
-            fruitPointImage = './public/img/WatermelonHappyBig.png';
-
-        } else if (shootDown.classList.contains("cherry")) {
-            totalScore += 6
-            //console.log(`Es una  (cherry)! ${totalScore}`);
-            shootDown.classList.remove("image-fruit");
-            shootDown.classList.remove("cherry");
-            fruitPointImage = './public/img/CherryHappy.png';
-
-        } else if (shootDown.classList.contains("orange")) {
-            totalScore += 4
-            //console.log(`Es una  (orange)! ${totalScore}`);
-            shootDown.classList.remove("image-fruit");
-            shootDown.classList.remove("orange");
-            fruitPointImage = './public/img/OrangeangryBig.png';
-        }
-
-        totalScoreElement.textContent = `${totalScore}`;
-        const pointImage = document.createElement("img");
-    
-        // Asigna nueva imagen
-        pointImage.src = fruitPointImage; 
-        console.log(clickY);
-
-        // Establece algunos estilos para la nueva imagen
-        pointImage.style.position = "absolute";
-        pointImage.style.left = clickX + "px";
-        pointImage.style.top = clickY + "px";
-        pointImage.style.opacity = "1";
-        pointImage.style.width = "150px";
-        pointImage.style.animation = "starSlideUp 1s ease-in-out"; // 
-
-        // Agrega la nueva imagen al documento
-        shootSuccess.appendChild(pointImage);
-
-        //elimina la Imagen
-        setTimeout(function () {
-            addEventListener
-            displayGame.removeChild(pointImage);
-        }, 1100);
-    });
-});
-
-
-
-
-
-
+export function launchGame(){
+    showRandomImages()
+    startGame(timer)
+    hitFailCountAndSounds()
+}

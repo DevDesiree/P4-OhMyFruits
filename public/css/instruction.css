@@ -1,5 +1,3 @@
-
-
 #instructionsAndPlay {
     display: none;
     margin-top: 2em;
@@ -46,22 +44,22 @@
     #modalInstructions {
         font-size: 18px;
     }
-    
+
     .img-casey {
         margin: auto;
         height: 19rem;
         width: 19rem;
     }
-  }
-  
-  @media (min-width: 1200px) {
+}
+
+@media (min-width: 1200px) {
     #modalInstructions {
         font-size: 22px;
     }
-    
+
     .img-casey {
         margin: auto;
         height: 20rem;
         width: 20rem;
     }
-  }
+}

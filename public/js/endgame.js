@@ -1,5 +1,5 @@
 import { togglePlay } from "./sounds.js"
-import { launchGame } from "./game2.js"
+import { launchGame } from "./game.js"
 // Funcionalidad para final de juego.
 
 

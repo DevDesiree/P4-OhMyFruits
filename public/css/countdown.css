@@ -1,6 +1,4 @@
-
 #countdown {
-    
     top: 60px;
     right: 20px;
     background-color: rgb(143, 143, 143);
@@ -9,13 +7,3 @@
     padding: 10px;
     font-size: 24px;
 }
-
-/* Estilos para los botones de dificultad */
-.difficulty-button {
-    background-color: #D83D3D;
-    color: #D9D9D9;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-}
-

@@ -24,31 +24,12 @@ export function togglePlay(source) {
 
     if (currentAudio.paused) {
         currentAudio.play();
-        iconSound.classList.remove("fa-volume-high");
-        iconSound.classList.add("fa-volume-xmark");
+        iconSound.classList.remove("fa-volume-xmark");
+        iconSound.classList.add("fa-volume-high");
 
     } else {
         currentAudio.pause();
-        iconSound.classList.remove("fa-volume-xmark");
-        iconSound.classList.add("fa-volume-high");
-    }
-}
-
-// Función para mutear/desmutear
-export function toggleMute(source) {
-    if (!audioInstances[source]) {
-        audioInstances[source] = loadAudio(source);
-    }
-
-    currentAudio = audioInstances[source]; 
-    currentAudio.muted = !currentAudio.muted;
-
-
-    if (currentAudio.muted) {
         iconSound.classList.remove("fa-volume-high");
-        iconSound.classList.add("fa-volume-mute");
-    } else {
-        iconSound.classList.remove("fa-volume-mute");
-        iconSound.classList.add("fa-volume-high");
+        iconSound.classList.add("fa-volume-xmark");
     }
 }
