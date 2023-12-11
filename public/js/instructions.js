@@ -1,4 +1,4 @@
-
+// Muestra el div que contiene las instruciones del juego.
 export function showInstructions(howToPlayButton){
   const modalInstructions = document.getElementById("modalInstructions");
   const buttonsGame = document.querySelector(".buttons-game");

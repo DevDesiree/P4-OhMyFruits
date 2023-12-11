@@ -1,7 +1,16 @@
-// import { hideGameButtons, startGame, restartGame } from "./startStorage";
-
 
 import { showRandomImages } from "./game.js";
+
+/**
+ * Maneja el evento de clic en el botón de guardar nombre.
+ * @param {Event} event - Objeto de evento generado por el clic del botón.
+ * 
+ * Lo que hace la siguiente funcion es por defecto prevenir que se envie el formulario 
+ * Obtiene el elemento de entrada del id playerName
+ * Limpiar el valor de player name y lo valida usando la funcion validateplayername
+ * Si pasa la verificacion guarda los datos en LocalStorage
+ * 
+ */
 
 export function saveName(event) {
   console.log('Save Name button clicked');
@@ -39,6 +48,12 @@ export function saveName(event) {
 }
 
 
+/**
+ * Valida el nombre del jugador según ciertos criterios.
+ * @param {string} name - Nombre del jugador a validar.
+ * @returns {boolean} - Devuelve true si el nombre es válido, de lo contrario, false.
+ */
+
 function validatePlayerName(name) {
   console.log('Validating Player Name:', name);
   if (!name) {
@@ -68,26 +83,32 @@ function validatePlayerName(name) {
   return true;
 }
 
+/**
+ * Inicia el juego de forma anónima al hacer clic en el botón correspondiente.
+ * Se establece un nombre de jugador anónimo, y se oculta el formulario.
+ */
 export function playAnonymously() {
   console.log('Play Anonymously button clicked');
   const anonymousName = "Anonymous Player";
-  const selectedDifficulty = document.getElementById('difficulty').value;
 
   localStorage.setItem("Username", anonymousName);
-  localStorage.setItem("Difficulty", selectedDifficulty);
+
   messageAprobe("Playing anonymously", "Scores will not be saved.")
   // restartGame(); 
   hideFormShowInstructions();
 }
 
 
-
+/**
+ * Oculta el formulario de juego y muestra las instrucciones.
+ */
 function hideFormShowInstructions() {
   const containerBannerImgAndForm = document.getElementById("containerBannerImgAndForm")
   const instructionsAndPlay = document.getElementById("instructionsAndPlay")
   containerBannerImgAndForm.style.display = 'none';
   instructionsAndPlay.style.display = 'block'
 }
+
 
 // añadido? yass
 export function startGame() {
@@ -130,6 +151,12 @@ export function startGame() {
 // }
 
 
+/**
+ * Muestra un mensaje de aprobación o error utilizando SweetAlert.
+ * @param {string} title - Título del mensaje.
+ * @param {string} text - Texto del mensaje.
+ * @param {string} customMessage - Mensaje de error personalizado.
+ */
 
 function messageAprobe(title, text) {
   Swal.fire({
