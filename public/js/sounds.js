@@ -9,7 +9,7 @@ function loadAudio(source) {
     audio.preload = "auto";
 }
 
-function togglePlay(source) {
+export function togglePlay(source) {
     if (!audio) {
         loadAudio(source);
     }
