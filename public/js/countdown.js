@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+document.addEventListener('DOMContentLoaded', function () {
+    const move pints u = {
+        easy: 120,
+        normal: 60,
+        hard: 30
+    };
+=======
+>>>>>>> e50bfb73843fd4798f310124be517d113f86483d
 
 const times = {
     easy: 120,

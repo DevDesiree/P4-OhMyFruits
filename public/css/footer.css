@@ -1,6 +1,4 @@
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: #9C0000 !important;
     padding: 1.2em;
@@ -8,7 +6,6 @@ footer {
 }
 
 .contact-icons {
-
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -40,11 +37,11 @@ footer {
 
 /* Estilos para pantallas de escritorio */
 @media only screen and (min-width: 1024px) {
- 
+
   }
   
-  /* Estilos para tabletas */
-  @media only screen and (min-width: 481px) and (max-width: 1023px) {
- 
-  }
+/* Estilos para tabletas */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+
+}
   

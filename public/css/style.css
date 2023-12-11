@@ -12,22 +12,21 @@
 /* Styles Navbar */
 @import url(./body.css);
 @import url(./navbar.css);
-@import url(./btnStyle.css);
 @import url(./gameTitle.css);
 @import url(./formUser.css);
 @import url(./btnStyle.css);
 
 @import url(./instruction.css);
 @import url(./game.css);
+
 @import url(./quitGame.css);
+
 @import url(./footer.css);
 
 
 /*
 
 @import url(./countdown.css);
-@import url(./game.css);
-
 
 @import url(./restart.css);
  */
