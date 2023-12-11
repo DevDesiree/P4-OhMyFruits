@@ -6,14 +6,19 @@
     width: 60px;
 }
 
+#iconSound{
+    display: none;
+}
+
 .fa-solid {
     font-size: 25px;
     cursor: pointer;
     margin-right: 20px;
+    color: white;
 }
 
 .fa-solid:hover {
-    color: #C20B50 !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .nav-item {
@@ -25,7 +30,7 @@ ul {
 }
 
 a:hover {
-    color: #C20B50 !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 

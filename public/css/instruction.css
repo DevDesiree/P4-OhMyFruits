@@ -41,8 +41,10 @@
 }
 
 @media (min-width: 768px) {
+
     #modalInstructions {
         font-size: 18px;
+        
     }
 
     .img-casey {

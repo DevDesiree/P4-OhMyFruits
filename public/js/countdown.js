@@ -20,7 +20,7 @@ export function startGame(timer) {
 
             setInterval(() => {
                 showEndGame();
-            }, 1000);
+            }, 500);
 
         } else if (currentTime <= 10) {
             toggleBlinking();

@@ -128,20 +128,20 @@ function hitFailCountAndSounds() {
             let fruitPointImage;
 
             if (shootDown.classList.contains("watermelon")) {
-                totalScore += 2;
+                totalScore += 1;
                 actualizar()
                 totalScoreElement.textContent = `${totalScore}`;
                 fruitPointImage = './public/img/WatermelonHappyBig.png';
                 // Elimina el elemento clicado después de agregar el nuevo elemento
                 displayGame.removeChild(shootDown);
             } else if (shootDown.classList.contains("cherry")) {
-                totalScore += 6;
+                totalScore += 5;
                 actualizar()
                 totalScoreElement.textContent = `${totalScore}`;
                 fruitPointImage = './public/img/CherryHappy.png';
                 displayGame.removeChild(shootDown);
             } else if (shootDown.classList.contains("orange")) {
-                totalScore += 4;
+                totalScore += 3;
                 actualizar()
                 totalScoreElement.textContent = `${totalScore}`;
                 fruitPointImage = './public/img/OrangeangryBig.png';
@@ -178,6 +178,9 @@ function hitFailCountAndSounds() {
 }
 
 function actualizar(){
+    if (totalScore <= 0){
+        totalScore = 0
+    }
     localStorage.setItem("totalScore", totalScore)
 }
 
