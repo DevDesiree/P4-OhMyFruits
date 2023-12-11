@@ -8,7 +8,8 @@ function showHideEndGame (){
   const gameOverScreen = document.getElementById("gameOverScreen")
   const contentGame = document.getElementById("contentGame")
   contentGame.style.display = "none"
-  gameOverScreen.style.display = "block"
+  gameOverScreen.style.display = "flex"
+
 
 }
 
@@ -22,7 +23,7 @@ function showUserDataRanking() {
 
   nameTd.innerText = localStorage.getItem("Username")
   difficultyTd.innerText = localStorage.getItem("Difficulty")
-  scoreTd.innerText = localStorage.getItem("Score")
+  scoreTd.innerText = localStorage.getItem("totalScore")
 }
 
 /**

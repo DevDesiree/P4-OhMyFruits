@@ -26,8 +26,6 @@ export function togglePlay(source) {
 }
 
 
-iconSound.addEventListener("click", () => {
-    togglePlay("./public/sounds/mixkit-medieval-show-fanfare-announcement-226.mp3")
-})
 
-saveName.addEventListener("click", togglePlay)
+
+

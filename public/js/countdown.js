@@ -1,15 +1,14 @@
-const times = {
-    easy: 120,
-    normal: 60,
-    hard: 30
-};
+
+
+import { showEndGame } from "./endgame.js";
 
 let countdown;
 let currentTime;
 
-function startGame(difficulty) {
-    currentTime = times[difficulty];
+export function startGame(timer) {
+    currentTime = timer / 1000
     displayTime();
+    console.log("timer" + currentTime);
 
     countdown = setInterval(function () {
         currentTime--;
@@ -18,6 +17,11 @@ function startGame(difficulty) {
         if (currentTime <= 0) {
             clearInterval(countdown);
             gameOver();
+
+            setInterval(() => {
+                showEndGame();
+            }, 1000);
+
         } else if (currentTime <= 10) {
             toggleBlinking();
         }

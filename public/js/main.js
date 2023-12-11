@@ -2,7 +2,8 @@
 import { toggleSound } from "./navbar.js";
 import { saveName, playAnonymously } from "./formUser.js";
 import { showInstructions, btnPlay } from "./instructions.js";
-import { showRandomImages } from "./game.js"; 
+import { launchGame } from "./game2.js";
+
 
 // Declaracion de constantes
 const changeSound = document.getElementById("iconSound");
@@ -43,4 +44,5 @@ const instructionsAndPlay = document.getElementById("instructionsAndPlay")
 startButton.addEventListener("click" ,() => {
     instructionsAndPlay.style.display = "none"
     contentGame.style.display = "block"
+    launchGame();
 })

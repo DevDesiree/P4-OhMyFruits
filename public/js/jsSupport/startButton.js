@@ -1,4 +1,4 @@
-import { startGame } from "./playerName.js";
+// import { startGame } from "./playerName.js";
 
 
 let startButton = document.getElementById("startButton");
