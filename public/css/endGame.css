@@ -9,6 +9,10 @@
     display: none;
 }
 
+#restartButton{
+    margin: 2em auto;
+}
+
 .game-over {
     text-align: center;
     font-size: 1.5em;
