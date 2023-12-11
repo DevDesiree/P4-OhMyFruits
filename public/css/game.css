@@ -1,3 +1,14 @@
+
+/* 
+ CSS HEX 
+--yellow-green: #77cc0aff;
+--peach: #f3c89fff;
+--rose-red: #c20b50ff;
+--floral-white: #f9f7efff;
+--russian-violet: #2c1c51ff;
+*/
+
+
 #displayGame {
     margin: 0;
     font-family: sans-serif;
@@ -10,7 +21,7 @@
     user-select: none;
 }
 
-#displayGame{
+#displayGame {
     background-image: url(../img/stageBkg.png); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -46,6 +57,7 @@
     font-size: 3em;
 }
 
+
 .infinite-carousel {
     margin: 2em 0;
     width: 90%;
@@ -70,11 +82,13 @@
     gap: 5.5em;
     list-style: none;
     cursor:url(../img/mouseTargetOff.png)64 64, auto;  
+
 }
 
 .infinite-carousel .moving-fruit {
     max-width: 20em;
 }
+
 
 .moving-fruit {
     max-width: 3em;
@@ -91,6 +105,7 @@
     margin-left: 6.3em;
 }
 
+
 @keyframes move {
     0% {
         transform: translateX(100%);
@@ -99,6 +114,8 @@
     100% {
         transform: translateX(-15000px);
     }
+  
+
 }  
 
 .image-plank {
@@ -109,7 +126,8 @@
     border: blue solid 2px;
 }
 
- @keyframes starSlideUp {
+
+@keyframes starSlideUp {
     0% {
         opacity: 0.8;
     }
@@ -126,5 +144,12 @@
     }
 }
 
- 
+
+
+/* Estilos para pantallas de escritorio */
+@media only screen and (min-width: 1024px) {}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {}
+
 

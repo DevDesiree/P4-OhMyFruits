@@ -1,12 +1,45 @@
 .navbar {
-    background-color: #1A0505 !important;
+    background-color: #9C0000 !important;
 }
 
 .navbar-brand>img {
     width: 45px;
-
 }
 
 .fa-solid {
+    font-size: 25px;
     cursor: pointer;
+    margin-right: 20px;
 }
+
+.fa-solid:hover{
+    color: #C20B50 !important;
+}
+
+.nav-item  {
+    padding-right: 4em;
+}
+
+ul {
+    margin: auto;
+}
+
+a:hover{
+    color: #C20B50 !important;
+}
+
+
+
+@media (max-width: 991px) {
+
+    .fa-solid{
+        margin-right: 0;
+    }
+    .nav-item {
+        padding-right: 0;
+        margin-bottom: 20px;
+        
+    }
+    
+}
+
