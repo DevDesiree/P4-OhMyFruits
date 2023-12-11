@@ -1,5 +1,5 @@
 
-import { showRandomImages } from "./game.js";
+// import { showRandomImages } from "./game.js";
 
 /**
  * Maneja el evento de clic en el botón de guardar nombre.
@@ -110,20 +110,20 @@ function hideFormShowInstructions() {
 }
 
 
-// añadido? yass
-export function startGame() {
-  console.log('Start Game function called');
-  const playerName = localStorage.getItem('Username');
-  const selectedDifficulty = localStorage.getItem('Difficulty');
+// // añadido? yass
+// export function startGame() {
+//   console.log('Start Game function called');
+//   const playerName = localStorage.getItem('Username');
+//   const selectedDifficulty = localStorage.getItem('Difficulty');
 
-  if (playerName && selectedDifficulty) {
-    hideFormAndShowGame();
-    showRandomImages();
-    initializeCountdown(selectedDifficulty);
-  } else {
-    messageError('Please enter your name and choose a difficulty level.');
-  }
-}
+//   if (playerName && selectedDifficulty) {
+//     hideFormAndShowGame();
+//     showRandomImages();
+//     initializeCountdown(selectedDifficulty);
+//   } else {
+//     messageError('Please enter your name and choose a difficulty level.');
+//   }
+// }
 
 
 // function hideFormAndShowGame() {

@@ -1,7 +1,7 @@
 
-import { showRandomImages } from "./game.js";
-import { messageError } from "./playerName.js";
-import * as CountdownModule from "./countdown.js";
+// import { showRandomImages } from "./game.js";
+// import { messageError } from "./playerName.js";
+// import * as CountdownModule from "./countdown.js";
 
 document.addEventListener('DOMContentLoaded', function () {
     const startButton = document.getElementById('startButton');
