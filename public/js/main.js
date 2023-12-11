@@ -10,9 +10,7 @@ import { restartGame } from "./endgame.js"
 const changeSound = document.getElementById("iconSound");
 const saveNameButton = document.getElementById("saveName");
 const btnPlayAnonymously = document.getElementById("playAnonymously");
-
 const howToPlayButton = document.getElementById("howToPlayButton");
-
 const restartButton = document.getElementById("restartButton");
 
 // Eventos del DOM
@@ -32,7 +30,6 @@ btnPlayAnonymously.addEventListener("click", () => {
 howToPlayButton.addEventListener("click", () => {
     showInstructions(howToPlayButton);
 })
-
 
 //Pasar a otra funcion, es solo prueba el codigo de abajo
 const contentGame = document.getElementById("contentGame")
