@@ -59,6 +59,7 @@
       </nav>
     </header>
     <main>
+<<<<<<< HEAD
       <!-- Formulario de Usuario -->
       <section>
         <div id="nameContainer">
@@ -164,6 +165,123 @@
           <!-- display game end -->
         </div>
       </section>
+=======
+        <!-- Formulario de Usuario -->
+        <section>
+            <div id="nameContainer">
+                <h2>Enter your Player Name</h2>
+                <form id="playerForm">
+                    <div class="form-group">
+                        <label for="playerName">Name:</label>
+                        <input type="text" id="playerName" class="player-name" name="playerName" required>
+
+                        <label for="difficulty">Select Difficulty:</label>
+                        <select id="difficulty" class="form-input" required>
+                            <option value="" disabled selected>Select difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="normal">Normal</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <button type="button" id="saveName" class="save-name-button">SAVE</button>
+
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="playAnonymously" class="anonymously-button">Play Anonymously</button>
+                    </div>
+                    <div id="message"></div>
+                    <div class="playButtonStart">
+                        
+                            <button type="button" id="playButton" class="play-button">Play</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Boton jugar e Instrucciones de juego -->
+        <section id="gameButtonsSection" style="display: none;">
+
+            <div class="game-buttons">
+                <div class="buttons-game">
+
+                    <!-- Aqui irán los botones de Play y How to Play -->
+                    <audio id="startButtonSound" src="./public/sounds/startButtonSound.wav"></audio>
+                    <button type="button" id="startButton" class="start-button">START GAME</button>
+                    <!-- boton restart diana -->
+                    <button type="button" id="restartButton" class="restart-button" style="display: none;">RESTART GAME</button>
+                    
+
+                </div>
+                <div class="quit-button">
+                    <button type="button" id="quitButton" class="quit-button">QUIT GAME</button>
+                </div>
+                <section>
+                <div class="how-to-play-button"> <button type="button" id="howToPlayButton" class="how-to-play-button">HOW TO PLAY</button>
+            <div id=" modalInstructions" class="instructions">
+                <!-- Aqui irá el modal de las instrucciones que se mostrara al clicar en el boton How to Play -->
+                <h2>HOW TO PLAY</h2>
+                <div><img src="./public/img/Casey The Archer.jpg" class="casey-the-archer" alt="Casey The Archer"></div>
+                <p>
+                    <br> Help Casey Knock Down the Fruits 🍒🍊🍉
+                    <br><br>
+                    <strong>Game Objective.</strong>
+                    <br>
+                    Help Casey knock down as many fruits as you can in the allotted time. <br>
+                    <br><strong>Each fruit has a different point value:<br></strong>
+                    - **Cherries**: 5 points<br>
+                    - **Oranges**: 3 points<br>
+                    - **Watermelons**: 1 point<br>
+                    <br>
+                    <strong>Level Duration</strong>
+                    <br>
+                    The time allotted depends on the difficulty level you choose:
+                    <br>
+                    - Difficult**: 30 seconds<br>
+                    - Normal**: 1 minute<br>
+                    - Easy**: 2 minutes<br><br>
+                    <strong>How to Play:</strong><br>
+                    1. Choose your difficulty level.<br>
+                    2. Use the arrow keys to move Casey's bow sight.<br>
+                    3. Press the space key to shoot.<br>
+                    4. Try to get the highest score possible before the time runs out!<br><br>
+                    Good luck and have fun helping Casey knock down the fruits! 😊
+                </p>
+                </div>
+            </div></section>
+        </section>
+
+        <!-- Juego -->
+        <section>
+            <div id="gameContainer" style="display: none;">
+            <div id="contentGame">
+                
+                <div id="displayGame">
+
+                    <!-- Aqui irá el display del juego -->
+
+                    <div class="infinite-carousel">
+                
+                        <div class="image-container" id="imageContainer1"></div>
+                        <div><img class="image-plank" src="./public/img/plank.png"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- Contador -->
+        <section>
+            <div id="countdownSection" style="display: none;">
+                <div id="countdown">
+                    <button class="difficulty-button" onclick="changeDifficulty('easy')">Easy</button>
+                    <button class="difficulty-button" onclick="changeDifficulty('normal')">Normal</button>
+                    <button class="difficulty-button" onclick="changeDifficulty('hard')">Hard</button>
+                </div>
+            </div>
+        </section>
+>>>>>>> e50bfb73843fd4798f310124be517d113f86483d
 
       <!-- Contador -->
       <section>
@@ -209,15 +327,26 @@
         </li>
       </ul>
 
+<<<<<<< HEAD
       <div>
         <p>
           Copyright <i class="fa-regular fa-copyright"></i> Oh my fruit! 2023
         </p>
       </div>
+=======
+        <div>
+            <p>Copyright <i class="fa-regular fa-copyright"></i>Carnival DOM 2023</p>
+        </div>
+>>>>>>> e50bfb73843fd4798f310124be517d113f86483d
     </footer>
     <script type="module" src="./public/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script type="module" src="./public/js/startStorage.js"></script>
+    <script type="module" src="./public/js/playerName.js"></script>
+    <script type="module" src="./public/js/startButton.js"></script>
+    <script type="module" src="./public/js/game.js"></script>
     <script src="./public/js/countdown.js"></script>
   </body>
 </html>

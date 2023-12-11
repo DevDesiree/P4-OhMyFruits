@@ -1,51 +1,65 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', function () {
     const move pints u = {
         easy: 120,
         normal: 60,
         hard: 30
     };
+=======
+>>>>>>> e50bfb73843fd4798f310124be517d113f86483d
 
-    let countdown;
-    let currentTime;
+const times = {
+    easy: 120,
+    normal: 60,
+    hard: 30
+};
 
-    function startGame(difficulty) {
-        currentTime = times[difficulty];
+let countdown;
+let currentTime;
+
+function startGame(difficulty) {
+    currentTime = times[difficulty];
+    displayTime();
+
+    countdown = setInterval(function () {
+        currentTime--;
         displayTime();
 
-        countdown = setInterval(function () {
-            currentTime--;
-            displayTime();
+        if (currentTime <= 0) {
+            clearInterval(countdown);
+            gameOver();
+        } else if (currentTime <= 10) {
+            toggleBlinking();
+        }
+    }, 1000);
+}
 
-            if (currentTime <= 0) {
-                clearInterval(countdown);
-                gameOver();
-            } else if (currentTime <= 10) {
-                toggleBlinking();
-            }
+function displayTime() {
+    const minutes = Math.floor(currentTime / 60);
+    const seconds = currentTime % 60;
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.innerText = formattedTime;
+}
 
-        }, 1000);
-    }
+function toggleBlinking() {
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.style.color = (countdownElement.style.color === 'rgb(194, 11, 80)') ? 'white' : '#c20b50ff';
+}
 
-    function displayTime() {
-        const minutes = Math.floor(currentTime / 60);
-        const seconds = currentTime % 60;
-        const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        const countdownElement = document.getElementById('countdown');
-        countdownElement.innerText = formattedTime;
-    }
+function gameOver() {
+    document.getElementById('countdown').innerText = 'Game Over';
+    document.getElementById('restartButton').style.display = 'block';
+}
 
-    function toggleBlinking() {
-        const countdownElement = document.getElementById('countdown');
-        countdownElement.style.color = (countdownElement.style.color === 'rgb(194, 11, 80)') ? 'white' : '#c20b50ff';
-    }
+window.changeDifficulty = function (difficulty) {
+    clearInterval(countdown);
+    startGame(difficulty);
+};
 
-    function gameOver() {
-        document.getElementById('countdown').innerText = 'Game Over';
-    }
+function initializeCountdown(difficulty) {
+    startGame(difficulty);
+}
 
-    window.changeDifficulty = function (difficulty) {
-        clearInterval(countdown);
-        startGame(difficulty);
-    };
 
-});
+window.initializeCountdown = initializeCountdown;

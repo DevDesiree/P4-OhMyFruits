@@ -33,8 +33,10 @@ function getRandomImageUrl() {
 //! añadir contante de 
 
 // Función para crear y mostrar imágenes aleatorias
-function showRandomImages() {
+export function showRandomImages() {
+    console.log('Showing random images...');
     imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
+
     const numImages = 300;  //número de imágenes mostradas💢
 
     // Clonar las imágenes existentes para hacer la secuencia infinita
