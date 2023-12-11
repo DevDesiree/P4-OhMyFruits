@@ -38,9 +38,10 @@ footer {
 /* Estilos para pantallas de escritorio */
 @media only screen and (min-width: 1024px) {
 
-}
-
+  }
+  
 /* Estilos para tabletas */
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
 
 }
+  
