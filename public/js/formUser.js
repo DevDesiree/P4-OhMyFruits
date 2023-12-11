@@ -92,6 +92,7 @@ export function playAnonymously() {
   const anonymousName = "Anonymous Player";
 
   localStorage.setItem("Username", anonymousName);
+  localStorage.setItem("Difficulty", "");
 
   messageAprobe("Playing anonymously", "Scores will not be saved.")
   // restartGame(); 

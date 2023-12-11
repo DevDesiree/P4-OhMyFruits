@@ -1,3 +1,5 @@
+import { togglePlay } from "./sounds.js"
+import { launchGame } from "./game2.js"
 // Funcionalidad para final de juego.
 
 
@@ -9,7 +11,6 @@ function showHideEndGame (){
   const contentGame = document.getElementById("contentGame")
   contentGame.style.display = "none"
   gameOverScreen.style.display = "flex"
-
 
 }
 
@@ -32,4 +33,14 @@ function showUserDataRanking() {
 export function showEndGame(){
   showHideEndGame()
   showUserDataRanking()
+}
+
+export function restartGame(){
+  const gameOverScreen = document.getElementById("gameOverScreen")
+  const contentGame = document.getElementById("contentGame")
+  gameOverScreen.style.display = "none"
+  contentGame.style.display = "block"
+  togglePlay("./public/sounds/successSound.mp3")
+  launchGame()
+
 }
