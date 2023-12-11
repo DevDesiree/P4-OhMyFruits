@@ -13,6 +13,7 @@ let numImagen;
 let timer;
 let totalScore
 
+
 // Depende de dificultad elegida por usuario , se establece unos segundos y numero de imagenes.
 function getDifficultyUser() {
     let difficultyUser = localStorage.getItem("difficulty")

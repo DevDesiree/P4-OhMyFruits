@@ -30,8 +30,12 @@ howToPlayButton.addEventListener("click", () => {
 })
 
 
-//Pasar a otra funcion, es solo prueba el codigo de abajo
 
+
+
+
+
+//Pasar a otra funcion, es solo prueba el codigo de abajo
 const contentGame = document.getElementById("contentGame")
 const startButton = document.getElementById("startButton")
 const instructionsAndPlay = document.getElementById("instructionsAndPlay")
