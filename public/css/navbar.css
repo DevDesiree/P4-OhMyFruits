@@ -12,11 +12,11 @@
     margin-right: 20px;
 }
 
-.fa-solid:hover{
+.fa-solid:hover {
     color: #C20B50 !important;
 }
 
-.nav-item  {
+.nav-item {
     padding-right: 4em;
 }
 
@@ -24,7 +24,7 @@ ul {
     margin: auto;
 }
 
-a:hover{
+a:hover {
     color: #C20B50 !important;
 }
 
@@ -32,14 +32,14 @@ a:hover{
 
 @media (max-width: 991px) {
 
-    .fa-solid{
+    .fa-solid {
         margin-right: 0;
     }
+
     .nav-item {
         padding-right: 0;
         margin-bottom: 20px;
-        
-    }
-    
-}
 
+    }
+
+}

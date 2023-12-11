@@ -1,5 +1,4 @@
 #gameOverScreen {
-    /* Añadido un contenedor adicional para centrar la tabla */
     background-image: url("../img/gameOverDisplay_2.jpeg");
     background-size: cover;
     background-position: center center;
