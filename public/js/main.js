@@ -29,3 +29,14 @@ howToPlayButton.addEventListener("click", () => {
     showInstructions(howToPlayButton);
 })
 
+
+//Pasar a otra funcion, es solo prueba el codigo de abajo
+
+const contentGame = document.getElementById("contentGame")
+const startButton = document.getElementById("startButton")
+const instructionsAndPlay = document.getElementById("instructionsAndPlay")
+
+startButton.addEventListener("click" ,() => {
+    instructionsAndPlay.style.display = "none"
+    contentGame.style.display = "block"
+})

@@ -8,6 +8,9 @@
 --russian-violet: #2c1c51ff;
 */
 
+#contentGame{
+    display: none;
+}
 
 #displayGame {
     margin: 0;
