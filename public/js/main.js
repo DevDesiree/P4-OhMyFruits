@@ -1,5 +1,5 @@
 import { saveName, playAnonymously } from "./formUser.js";
-import { showInstructions, btnPlay } from "./instructions.js";
+import { showInstructions } from "./instructions.js";
 import { launchGame } from "./game.js";
 import { restartGame } from "./endgame.js"
 
