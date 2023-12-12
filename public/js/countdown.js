@@ -1,5 +1,3 @@
-
-
 import { showEndGame } from "./endgame.js";
 
 let countdown;
@@ -8,7 +6,6 @@ let currentTime;
 export function startGame(timer) {
     currentTime = timer / 1000
     displayTime();
-    console.log("timer" + currentTime);
 
     countdown = setInterval(function () {
         currentTime--;
@@ -45,5 +42,3 @@ function gameOver() {
     document.getElementById('countdown').innerText = 'Game Over';
     document.getElementById('restartButton').style.display = 'block';
 }
-
-

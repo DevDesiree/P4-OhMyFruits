@@ -1,8 +1,3 @@
-
-// import { showRandomImages } from "./game.js";
-// import { messageError } from "./playerName.js";
-// import * as CountdownModule from "./countdown.js";
-
 document.addEventListener('DOMContentLoaded', function () {
     const startButton = document.getElementById('startButton');
     const restartButton = document.getElementById('restartButton');
@@ -31,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
 
 export function restartGame() {
     hideGameButtons();
