@@ -136,7 +136,7 @@ function hitFailCountAndSounds() {
                 totalScore += 3;
                 actualizar()
                 totalScoreElement.textContent = `${totalScore}`;
-                fruitPointImage = './public/img/OrangeangryBig.png';
+                fruitPointImage = './public/img/OrangeAngryBig.png';
                 displayGame.removeChild(shootDown);
             }
 
