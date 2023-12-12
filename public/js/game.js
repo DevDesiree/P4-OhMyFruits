@@ -5,7 +5,7 @@ const imageContainer1 = document.getElementById('imageContainer1');
 
 
 const watermelon = './public/img/WatermelonHappyBig.png';
-const orange = './public/img/OrangeangryBig.png';
+const orange = './public/img/OrangeAngryBig.png';
 const cherry = './public/img/CherryHappy.png';
 
 const imageUrls = [watermelon, orange, cherry];
