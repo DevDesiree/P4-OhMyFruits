@@ -1,5 +1,3 @@
-// import { startGame } from "./playerName.js";
-
 
 let startButton = document.getElementById("startButton");
 startButton.addEventListener("click", () => {

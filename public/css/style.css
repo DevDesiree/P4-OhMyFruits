@@ -1,13 +1,3 @@
-/* 
- CSS HEX 
---yellow-green: #77cc0aff;
---peach: #f3c89fff;
---rose-red: #c20b50ff;
---floral-white: #f9f7efff;
---russian-violet: #2c1c51ff;
-*/
-/*  */
-
 @import url(./body.css);
 @import url(./navbar.css);
 @import url(./gameTitle.css);

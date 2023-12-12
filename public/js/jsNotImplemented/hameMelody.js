@@ -5,7 +5,7 @@ const hardMelody = "./";
 let audio = new Audio();
 
 function startMelody(difficulty) {
-    // Elige la melodía y la duración en función de la dificultad
+
     let melody, duration;
     switch (difficulty) {
       case 'easy':
@@ -21,21 +21,16 @@ function startMelody(difficulty) {
         duration = 30;
         break;
     }
-  
-    // Configura la melodía y comienza a reproducirla
+
     audio.src = melody;
     audio.play();
   
-    // Detén la melodía después de la duración especificada
     setTimeout(function() {
       audio.pause();
-      // Aquí puedes hacer cualquier limpieza necesaria después de que la melodía se detenga
     }, duration * 1000);
   }
   
-  // Vincula la función startMelody al evento de clic del botón startGame
   document.getElementById('startGame').addEventListener('click', function() {
-    // Determina la dificultad del juego y la pasa a la función startMelody
-    let difficulty = 'easy'; // reemplaza esto con la lógica para determinar la dificultad
+    let difficulty = 'easy';
     startMelody(difficulty);
   });

@@ -3,7 +3,7 @@ import { togglePlay } from "./sounds.js";
 
 const imageContainer1 = document.getElementById('imageContainer1');
 
-// ARRAY Lista de imágenes o url
+
 const watermelon = './public/img/WatermelonHappyBig.png';
 const orange = './public/img/OrangeangryBig.png';
 const cherry = './public/img/CherryHappy.png';
@@ -15,10 +15,9 @@ let timer;
 let totalScore = 0;
 
 
-// Depende de dificultad elegida por usuario , se establece unos segundos y numero de imagenes.
+
 function getDifficultyUser() {
     let difficultyUser = localStorage.getItem("Difficulty")
-    console.log("Dificultad elegida por usuario : " + difficultyUser);
 
     if (difficultyUser == "easy") {
         numImagen = 300
@@ -45,31 +44,27 @@ function getDifficultyUser() {
 
 }
 
-// Se escogen aleatoriamente las imagenes.
+
 function getRandomImageUrl() {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
 }
 
-// Se muestran aleatoriamente las imagenes.
+
 function showRandomImages() {
-    console.log('Showing random images...');
-    imageContainer1.innerHTML = ''; // Limpiar imágenes anteriores
+    imageContainer1.innerHTML = ''; 
     actualizar()
     togglePlay("./public/sounds/backgroundSound.mp3")
 
     let [numberImagesDifficulty, timer] = getDifficultyUser();
-    console.log(numberImagesDifficulty);
-    console.log(timer);
 
-    // Clonar las imágenes existentes para hacer la secuencia infinita
     const existingImages = imageContainer1.querySelectorAll('.image-fruit');
     existingImages.forEach((existingImage) => {
         const clone = existingImage.cloneNode(true);
         imageContainer1.appendChild(clone);
     });
 
-    // Agregar nuevas imágenes
+
     for (let i = 0; i < numberImagesDifficulty; i++) {
         const imageUrl = getRandomImageUrl();
         const imageElement = document.createElement('img');
@@ -89,7 +84,7 @@ function showRandomImages() {
         imageContainer1.appendChild(imageElement);
         imageElement.style.animation = "move 30s linear infinite";
 
-        //💢si hay dificultades, cambiar los 30seguntos
+
     }
 
     setInterval(() => {
@@ -104,7 +99,6 @@ function hitFailCountAndSounds() {
     displayGame.addEventListener('click', function (event) {
         const clickedElement = event.target;
 
-        // Asegúrate de que solo estás tratando clics en elementos específicos dentro de displayGame
         if (clickedElement.classList.contains("image-fruit")) {
             togglePlay('./public/sounds/hitSound.mp3');
         } else {
@@ -115,7 +109,6 @@ function hitFailCountAndSounds() {
         }
     });
 
-    // Obtén los elementos más recientes con la clase moving-fruit
     const shootSuccess = document.querySelectorAll(".moving-fruit");
 
     shootSuccess.forEach(function (shootDown) {
@@ -132,7 +125,6 @@ function hitFailCountAndSounds() {
                 actualizar()
                 totalScoreElement.textContent = `${totalScore}`;
                 fruitPointImage = './public/img/WatermelonHappyBig.png';
-                // Elimina el elemento clicado después de agregar el nuevo elemento
                 displayGame.removeChild(shootDown);
             } else if (shootDown.classList.contains("cherry")) {
                 totalScore += 5;
@@ -150,8 +142,6 @@ function hitFailCountAndSounds() {
 
             totalScoreElement.textContent = `${totalScore}`;
         
-
-            // Configura la nueva imagen
             pointImage.src = fruitPointImage;
             pointImage.style.position = "absolute";
             pointImage.style.left = clickX + "px";
@@ -160,15 +150,12 @@ function hitFailCountAndSounds() {
             pointImage.style.width = "150px";
             pointImage.style.animation = "starSlideUp 1s ease-in-out";
 
-            // Agrega el evento clic al nuevo elemento
             pointImage.addEventListener("click", function () {
-                // Cualquier acción que desees realizar en clic de la nueva imagen
+               
             });
 
-            // Agrega la nueva imagen al documento
             displayGame.appendChild(pointImage);
 
-            // Elimina la imagen después de 1100 ms
             setTimeout(function () {
                 displayGame.removeChild(pointImage);
             }, 1100);
